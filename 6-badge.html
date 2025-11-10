@@ -14,18 +14,29 @@
             color: #0b5ed7;
             margin-bottom: 10px;
         }
-        .caixa{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-     } 
+        
+        
     </style>
 </head>
 <body>
-    <h1>Exemplo</h1>
-    <div class="caixa">
+    <button type="button" class="btn btn-primary position-relative anchor-button">Inbox
+ <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger anchor-badge">
+ 99+ <span class="visually-hidden">unread messages</span>
+ </span>
+</button>
+<style>
+ .anchor-button {
+ anchor-name: --inbox-button;
+ }
+ .anchor-badge {
+ position: absolute;
+ top: anchor(--inbox-button top);
+ left: anchor(--inbox-button right);
+ translate: -50% -50%;
+ }
+ 
+</style>
+   
         
     </div>
 

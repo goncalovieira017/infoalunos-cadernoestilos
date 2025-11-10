@@ -21,7 +21,23 @@
             box-shadow:0 2px 8px rgba(0,0,0,0.1);
             margin-bottom: 20px;
      } 
+
+    :root{
+        --cor-primaria: #007bff;
+        --cor-secundaria: #6c757d;
+    }
+    .btn-primary{
+        background-color: var(--cor-primaria);
+        color: white;
+      
+    }
+    .btn-secondary{
+        background-color: var(--cor-secundaria);
+        color: white;
+    }
     </style>
+    <button class="btn-primary">botao com var()</button>
+    <button class="btn-secondary">botao com var</button>
 </head>
 <body>
     <h1>Exemplo</h1>
