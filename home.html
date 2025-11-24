@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Infoalunos-dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">Infoalunos</div>
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar...">
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active">Inicio</a>
+                <details class="menu-accordion">
+                    <summary>Geral</summary>
+                    <div class="submenu">
+                        <a href="#">Processos</a>
+                        <a href="#">Dados Pessoais</a>
+                        <a href="">Privacidade</a>
+                        <a href="">Ajuda</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Serviços</summary>
+                    <div class="submenu">
+                        <a href="#">Pagamentos</a>
+                        <a href="#">Matriculas Inscrições</a>
+                        <a href="#">Inscrição em turmas</a>
+                        <a href="#">Requerimentos</a>
+                        <a href="#">Cartão Universitário</a>
+                        <a href="#">SASUMa-Bolasas</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Concursos</summary>
+                    <div class="submenu">
+                        <a href="#">Candidaturas</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Avaliação</summary>
+                    <div class="submenu">
+                        <a href="#">Pautas</a>
+                        <a href="#">Reclamação de notas</a>
+                        <a href="#">Inqueritos</a>
+                        <a href="#">Resultado de inqueritos</a>
+                        <a href="">Inquerito RAIDES</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Creditações</summary>
+                    <div class="submenu">
+                        <a href="#">Lista processos</a>
+                        <a href="#">Novo processo</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Documentos</summary>
+                    <div class="submenu">
+                        <a href="#">Académicos</a>
+                        <a href="#">Declarações</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Aulas</summary>
+                    <div class="submenu">
+                        <a href="#">Calendário</a>
+                        <a href="#">Sumários</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Discilplina</summary>
+                    <div class="submenu">
+                        <a href="#">Ficha</a>
+                        <a href="#">Programa</a>
+                        <a href="#">Ficheiros</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Curso</summary>
+                    <div class="submenu">
+                        <a href="#">Ficha curricular</a>
+                        <a href="#">Horários</a>
+                        <a href="#">Histórico de Matriculas-inscrições</a>
+                        <a href="#">Histórico de Discilplinas aprovadas</a>
+                        <a href="#">Transição para bolonha</a>
+                        <a href="#">Plano de conclusões</a>
+                        <a href="#">Quadro de prescrição</a>
+                        <a href="#">Atividades académicas do aluno</a>
+                    </div>
+                </details>
+                <details class="menu-accordion">
+                    <summary>Inatituição</summary>
+                    <div class="submenu">
+                        <a href="#">Estrutura Organica</a>
+                    </div>
+                </details>
+                <a href="#" class="menu-item">Eleições</a>     
+            </nav>
+            <div style="margin-top: 20px; font-size: 0.7rem; color: rgba(255,255,255,0.5); text-align: center;">
+                Portugal 2030 . Madeira
+            </div>
+        </aside>
+        <main class="main-content">
+            <h2>Conteúdo do dashboard (A desenvolver)</h2>
+        </main>
+    </div>
+</body>
+<style>
+    dashboad-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .sidebar {
+        background-color: var(--cor-titulo);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        overflow-y: auto;
+        height:100%;
+    }
+    .sidebar::-webkit-scrollbar { width: 6px; }
+    .sidebar::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.3); border-radius: 10px; }
+    .sidebar::-webkit-scrollbar-track { background-color: transparent; }
+
+    .main-content {
+        background-color: #f4f6f9;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+    }
+        
+
+    
+</style>
+
+    
+
+        
