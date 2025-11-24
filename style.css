@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+    [cite_start]/* 2. Cores retiradas do PDF do enunciado [cite: 52] */
+    --cor-primaria: light-dark(#00509e, #3a8dff); /* Azul InfoAlunos */
+    --cor-titulo: light-dark(#1E1A50, #e0e0e0);   /* Azul Escuro Institucional */
+    --cor-texto: light-dark(#212529, #f8f9fa);     /* Texto corrido */
+    --cor-fundo: light-dark(#ffffff, #121212);     /* Fundo da página */
+    --cor-painel: light-dark(#ffffff, #1e1e1e);    /* Fundo dos cartões */
+    --cor-borda: light-dark(#dee2e6, #495057);
+    --cor-destaque: #007bff;                       /* Azul para links/botões */
+    
+    [cite_start]/* Configuração automática do tema (Baseline) [cite: 10] */
+    color-scheme: light dark;
+}
+
+body {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Títulos com a cor oficial */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--cor-titulo);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+h1 { 
+    font-size: 28px; 
+    margin-bottom: 1rem; 
+    border-bottom: 2px solid var(--cor-primaria); 
+    padding-bottom: 10px; 
+    display: inline-block;
+}
+
+/* Contentor principal (Cartão branco onde ficam os exemplos) */
+.componente-container {
+    background-color: var(--cor-painel);
+    border: 1px solid var(--cor-borda);
+    padding: 2.5rem;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Links */
+a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover { text-decoration: underline; }
+
+/* --- RODAPÉ INSTITUCIONAL (Estilo para os logos) --- */
+.footer-uma {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-borda);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--cor-titulo);
+    opacity: 0.8;
+}
+
+.footer-box {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* =========================================
+   COMPONENTES ESPECÍFICOS (GRID LAYOUT)
+   [cite_start]Obrigatório para cumprir o enunciado [cite: 684]
+   ========================================= */
+
+/* 1. Navbar (Grid Layout) */
+.navbar { 
+    background-color: var(--cor-primaria); 
+    padding: 1rem 2rem;
+    color: white;
+    display: grid; /* Grid em vez de Flex */
+    grid-template-columns: auto 1fr; /* Logo à esq, resto à direita */
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-brand { 
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    color: white; 
+    text-decoration: none; 
+}
+
+.navbar-nav {
+    display: grid;
+    grid-auto-flow: column; /* Links em linha */
+    justify-content: end;   /* Alinhar à direita */
+    gap: 20px;
+}
+
+.navbar-nav a { 
+    color: white; 
+    text-decoration: none; 
+    opacity: 0.9;
+    font-weight: 500;
+}
+.navbar-nav a:hover, .navbar-nav a.active { opacity: 1; text-decoration: underline; }
+
+
+/* 2. Alertas (Grid Layout) */
+.alert { 
+    display: grid;
+    grid-template-columns: 24px 1fr; /* Ícone | Texto */
+    gap: 15px;
+    align-items: center;
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+    border-radius: 8px; 
+    border: 1px solid transparent;
+}
+.alert-info { background-color: #cff4fc; color: #055160; border-color: #b6effb; }
+.alert-danger { background-color: #f8d7da; color: #842029; border-color: #f5c2c7; }
+
+
+/* 3. Breadcrumb (Grid Layout) */
+.breadcrumb { 
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 10px;
+    list-style: none; 
+    padding: 0; 
+}
+.breadcrumb-item:not(:last-child)::after { 
+    content: "/"; 
+    padding-left: 10px; 
+    color: var(--cor-borda); 
+}
+.breadcrumb-item a { color: var(--cor-primaria); text-decoration: none; }
+.breadcrumb-item.active { color: var(--cor-secundaria); font-weight: bold; }
+
+
+/* 4. Paginação (Grid Layout) */
+.pagination { 
+    display: grid;
+    grid-auto-flow: column;
+    width: max-content;
+    list-style: none; 
+    padding: 0; 
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.page-link { 
+    display: block; 
+    padding: 10px 15px; 
+    text-decoration: none; 
+    color: var(--cor-primaria); 
+    border-right: 1px solid var(--cor-borda);
+    background: var(--cor-fundo);
+}
+.page-item:last-child .page-link { border-right: none; }
+.page-item.active .page-link { 
+    background-color: var(--cor-primaria); 
+    color: white; 
+}

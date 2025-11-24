@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>20. Tooltip</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #btn-info { anchor-name: --tooltip; }
+        #tip { 
+            position: absolute; position-anchor: --tooltip; left: anchor(right); top: anchor(center);
+            margin-left: 10px; background: #333; color: white; padding: 5px 10px; border-radius: 4px; border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="componente-container">
+        <h1>20. Tooltip (Popover)</h1>
+        <button id="btn-info" class="btn btn-secondary" popovertarget="tip">Ajuda ?</button>
+        <div id="tip" popover>Dica importante aqui!</div>
+    </div>
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
+</body>
+</html>

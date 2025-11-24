@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>9. Card</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
+        .card-wrapper { container-type: inline-size; resize: horizontal; overflow: auto; border: 1px dashed #ccc; padding: 10px; }
+        .card-demo { background: #f0f0f0; padding: 20px; border-radius: 8px; }
+        
+        /* Container Query: muda cor se o PAI for maior que 400px */
+        @container (min-width: 400px) {
+            .card-demo { background: var(--cor-titulo); color: white; }
+            .card-demo::after { content: " (Modo Wide ativado)"; }
         }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-        .caixa{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-     } 
     </style>
 </head>
 <body>
-    <h1>Exemplo</h1>
-    <div class="caixa">
-        
+    <div class="componente-container">
+        <h1>9. Card (Container Query)</h1>
+        <p>Arraste o canto da caixa pontilhada para ver a mudança.</p>
+        <div class="card-wrapper">
+            <div class="card-demo">
+                <h3>Cartão do Aluno</h3>
+                <p>O estilo muda conforme o tamanho do contentor.</p>
+            </div>
+        </div>
     </div>
-
-    
-</body>
-<html>
-</head>
-<body>
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>13. Modal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        dialog::backdrop { background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+        dialog { border: none; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+    <div class="componente-container">
+        <h1>13. Modal (Backdrop)</h1>
+        <button onclick="document.getElementById('modal1').showModal()" class="btn btn-primary">Abrir Aviso</button>
+        
+        <dialog id="modal1">
+            <h2>Aviso Importante</h2>
+            <p>A sua sessão no InfoAlunos vai expirar.</p>
+            <div style="text-align: right; margin-top: 20px;">
+                <button onclick="document.getElementById('modal1').close()" class="btn btn-secondary">Fechar</button>
+            </div>
+        </dialog>
+    </div>
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
+</body>
+</html>

@@ -1,50 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>6. Badge</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
+        .btn-anchor { anchor-name: --btn-msg; position: relative; }
+        .badge {
+            background: #dc3545; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;
+            position: absolute;
+            /* Anchor Positioning */
+            position-anchor: --btn-msg;
+            top: anchor(top); left: anchor(right);
+            translate: -50% -50%;
         }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-        
-        
     </style>
 </head>
 <body>
-    <button type="button" class="btn btn-primary position-relative anchor-button">Inbox
- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger anchor-badge">
- 99+ <span class="visually-hidden">unread messages</span>
- </span>
-</button>
-<style>
- .anchor-button {
- anchor-name: --inbox-button;
- }
- .anchor-badge {
- position: absolute;
- top: anchor(--inbox-button top);
- left: anchor(--inbox-button right);
- translate: -50% -50%;
- }
- 
-</style>
-   
-        
+    <div class="componente-container">
+        <h1>6. Badge (Anchor Positioning)</h1>
+        <button class="btn btn-primary btn-anchor">
+            Mensagens <span class="badge">9+</span>
+        </button>
     </div>
-
-    
-</body>
-<html>
-</head>
-<body>
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
 </html>

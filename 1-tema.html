@@ -1,45 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tema</title>
+    <title>1. Tema Claro/Escuro</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
+        .demo-box {
+            /* Funcionalidade Baseline light-dark() */
+            background-color: light-dark(#e2e3e5, #223826);
+            color: light-dark(#383d41, #efefec);
+            padding: 20px; border-radius: 8px; border: 1px solid var(--cor-primaria);
+            font-weight: bold; text-align: center;
         }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-        .caixa{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-     } 
-     :root{color-scheme: light dark;}
-     body{
-        color-scheme: light dark(white,#121212);
-        color: lightdark(#121212,white);
-     }
-     button{
-        background: lightdark(#0b5ed7,#2ea3ff);
-        color: white;border:none;padding:8px 12px;border-radius: 8px;
-
-    }
     </style>
-    <button>alternar tema(css light-dark)</button>
 </head>
 <body>
-    <h1>Exemplo</h1>
-    <div class="caixa">
-
+    <div class="componente-container">
+        <h1>1. Alternar Tema (light-dark)</h1>
+        <p>Altere o tema do seu sistema operativo para ver a cor mudar.</p>
+        <div class="demo-box">Este elemento muda de cor automaticamente!</div>
     </div>
-
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
-<html>
+</html>

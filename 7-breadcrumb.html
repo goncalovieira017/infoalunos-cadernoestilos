@@ -1,65 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>7. Breadcrumb</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
-        }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-      
-      
+        .breadcrumb { display: grid; grid-auto-flow: column; justify-content: start; gap: 10px; list-style: none; padding: 0; }
+        .breadcrumb li:not(:last-child)::after { content: "/"; padding-left: 10px; color: #999; }
+        .breadcrumb a { text-decoration: none; color: var(--cor-primaria); }
+        .breadcrumb li:last-child { color: var(--cor-texto); font-weight: bold; }
     </style>
 </head>
 <body>
-    <nav aria-label="breadcrumb">
- <ol class="breadcrumb">
- <li class="breadcrumb-item"><a href="#">Home</a></li>
- <li class="breadcrumb-item"><a href="#">Library</a></li>
- <li class="breadcrumb-item active" aria-current="page">Data</li>
- </ol>
-</nav>
-<style>
-    .breadcrump {
-        list-style: none;
-        display: flex;
-        gap:6px;
-    
-    }
-    .breadcrumb li::after {
-        content: "/";
-        margin-left: 6px;
-        color: #6c757d;
-        
-        }
-        .breadcrumb li:last-child::after {
-            content: "";}
-            .breadcrumb a {
-                text-decoration: none;
-                color: #0b5ed7;
-            }   
-            .activate {
-                color: #6c757d;
-            }
-</style>
-
-
-  
-        
+    <div class="componente-container">
+        <h1>7. Breadcrumb</h1>
+        <ul class="breadcrumb">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li>Requerimentos</li>
+        </ul>
     </div>
-
-    
-</body>
-<html>
-</head>
-<body>
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
 </html>

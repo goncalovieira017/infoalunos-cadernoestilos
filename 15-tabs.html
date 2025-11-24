@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>15. Tabs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .grid-tabs { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; }
+        details { display: contents; }
+        summary { grid-row: 1; padding: 15px; border-bottom: 2px solid #ddd; cursor: pointer; text-align: center; font-weight: bold;}
+        details[open] summary { border-bottom: 2px solid var(--cor-primaria); color: var(--cor-primaria); }
+        details div { grid-column: 1 / -1; grid-row: 2; padding: 20px; border: 1px solid #ddd; border-top: none; }
+        /* Esconde conteúdo de não abertos */
+        details:not([open]) div { display: none; }
+        /* Posicionamento manual (fallback) */
+        details:nth-of-type(1) summary { grid-column: 1; }
+        details:nth-of-type(2) summary { grid-column: 2; }
+        details:nth-of-type(3) summary { grid-column: 3; }
+    </style>
+</head>
+<body>
+    <div class="componente-container">
+        <h1>15. Tabs (Grid)</h1>
+        <div class="grid-tabs">
+            <details open name="tabs"><summary>Aulas</summary><div>Conteúdo das Aulas</div></details>
+            <details name="tabs"><summary>Pautas</summary><div>Conteúdo das Pautas</div></details>
+            <details name="tabs"><summary>Exames</summary><div>Conteúdo dos Exames</div></details>
+        </div>
+    </div>
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
+</body>
+</html>

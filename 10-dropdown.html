@@ -1,39 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>10. Dropdown</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
+        #btn-menu { anchor-name: --menu; }
+        #menu-pop { 
+            position: absolute; position-anchor: --menu; top: anchor(bottom); left: anchor(left);
+            margin: 0; padding: 0; border: 1px solid #ccc; list-style: none; background: var(--cor-painel);
         }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-        .caixa{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-     } 
+        #menu-pop li a { display: block; padding: 10px 20px; text-decoration: none; color: var(--cor-texto); }
+        #menu-pop li a:hover { background: #f0f0f0; }
     </style>
 </head>
 <body>
-    <h1>Exemplo</h1>
-    <div class="caixa">
-        
+    <div class="componente-container">
+        <h1>10. Dropdown (Popover)</h1>
+        <button id="btn-menu" class="btn btn-primary" popovertarget="menu-pop">Opções ▼</button>
+        <ul id="menu-pop" popover>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
     </div>
-
-    
-</body>
-<html>
-</head>
-<body>
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
 </html>

@@ -1,55 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>2. Cores</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
-        }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-        .caixa{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-     } 
-
-    :root{
-        --cor-primaria: #007bff;
-        --cor-secundaria: #6c757d;
-    }
-    .btn-primary{
-        background-color: var(--cor-primaria);
-        color: white;
-      
-    }
-    .btn-secondary{
-        background-color: var(--cor-secundaria);
-        color: white;
-    }
+        .grid-cores { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .cor-item { padding: 20px; color: white; text-align: center; border-radius: 4px; font-weight: bold; }
     </style>
-    <button class="btn-primary">botao com var()</button>
-    <button class="btn-secondary">botao com var</button>
 </head>
 <body>
-    <h1>Exemplo</h1>
-    <div class="caixa">
-        
+    <div class="componente-container">
+        <h1>2. Paleta de Cores (CSS Variables)</h1>
+        <div class="grid-cores">
+            <div class="cor-item" style="background: var(--cor-primaria)">Primária</div>
+            <div class="cor-item" style="background: #6c757d">Secundária</div>
+            <div class="cor-item" style="background: #28a745">Sucesso</div>
+            <div class="cor-item" style="background: #dc3545">Perigo</div>
+            <div class="cor-item" style="background: #1E1A50">Institucional</div>
+        </div>
     </div>
-
-    
-</body>
-<html>
-</head>
-<body>
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
 </html>

@@ -1,38 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>4. Accordion</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial,Arial, Helvetica, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
-        }
-        h1 {
-            color: #0b5ed7;
-            margin-bottom: 10px;
-        }
-        
-     
+        details { border: 1px solid var(--cor-borda); border-radius: 4px; margin-bottom: 10px; overflow: hidden; }
+        summary { background: var(--cor-fundo); padding: 15px; cursor: pointer; font-weight: 600; }
+        details[open] summary { background: var(--cor-primaria); color: white; }
+        .conteudo { padding: 15px; background: var(--cor-painel); }
     </style>
 </head>
 <body>
-    <details>
-        <summary>ver mais detalhes</summary>
-        <p>conteudo expandido do accordion</p>
-    </details>
-   
-    
-        
+    <div class="componente-container">
+        <h1>4. Accordion</h1>
+        <details>
+            <summary>Dados Pessoais</summary>
+            <div class="conteudo">Nome, Morada, NIF e Contactos do aluno.</div>
+        </details>
+        <details>
+            <summary>Histórico Académico</summary>
+            <div class="conteudo">Lista de disciplinas concluídas e médias.</div>
+        </details>
     </div>
-
-    
-</body>
-<html>
-</head>
-<body>
-    
+    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
 </body>
 </html>
