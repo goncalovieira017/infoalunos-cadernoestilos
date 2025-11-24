@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-    [cite_start]/* 2. Cores retiradas do PDF do enunciado [cite: 52] */
-    --cor-primaria: light-dark(#00509e, #3a8dff); /* Azul InfoAlunos */
-    --cor-titulo: light-dark(#1E1A50, #e0e0e0);   /* Azul Escuro Institucional */
-    --cor-texto: light-dark(#212529, #f8f9fa);     /* Texto corrido */
-    --cor-fundo: light-dark(#ffffff, #121212);     /* Fundo da página */
-    --cor-painel: light-dark(#ffffff, #1e1e1e);    /* Fundo dos cartões */
+    [cite_start]
+    --cor-primaria: light-dark(#00509e, #3a8dff); 
+    --cor-titulo: light-dark(#1E1A50, #e0e0e0);    
+    --cor-texto: light-dark(#212529, #f8f9fa);     
+    --cor-fundo: light-dark(#ffffff, #121212);     
+    --cor-painel: light-dark(#ffffff, #1e1e1e);    
     --cor-borda: light-dark(#dee2e6, #495057);
-    --cor-destaque: #007bff;                       /* Azul para links/botões */
+    --cor-destaque: #007bff;                       
     
-    [cite_start]/* Configuração automática do tema (Baseline) [cite: 10] */
+    [cite_start]
     color-scheme: light dark;
 }
 
@@ -24,7 +24,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Títulos com a cor oficial */
+
 h1, h2, h3, h4, h5, h6 {
     color: var(--cor-titulo);
     font-weight: 700;
@@ -39,7 +39,7 @@ h1 {
     display: inline-block;
 }
 
-/* Contentor principal (Cartão branco onde ficam os exemplos) */
+
 .componente-container {
     background-color: var(--cor-painel);
     border: 1px solid var(--cor-borda);
@@ -50,7 +50,7 @@ h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Links */
+
 a {
     color: var(--cor-destaque);
     text-decoration: none;
@@ -58,7 +58,7 @@ a {
 }
 a:hover { text-decoration: underline; }
 
-/* --- RODAPÉ INSTITUCIONAL (Estilo para os logos) --- */
+
 .footer-uma {
     margin-top: 40px;
     padding-top: 20px;
@@ -84,18 +84,15 @@ a:hover { text-decoration: underline; }
     display: inline-block;
 }
 
-/* =========================================
-   COMPONENTES ESPECÍFICOS (GRID LAYOUT)
-   [cite_start]Obrigatório para cumprir o enunciado [cite: 684]
-   ========================================= */
 
-/* 1. Navbar (Grid Layout) */
+
+
 .navbar { 
     background-color: var(--cor-primaria); 
     padding: 1rem 2rem;
     color: white;
-    display: grid; /* Grid em vez de Flex */
-    grid-template-columns: auto 1fr; /* Logo à esq, resto à direita */
+    display: grid; 
+    grid-template-columns: auto 1fr;  
     align-items: center;
     gap: 20px;
 }
@@ -109,8 +106,8 @@ a:hover { text-decoration: underline; }
 
 .navbar-nav {
     display: grid;
-    grid-auto-flow: column; /* Links em linha */
-    justify-content: end;   /* Alinhar à direita */
+    grid-auto-flow: column; 
+    justify-content: end;   
     gap: 20px;
 }
 
@@ -123,10 +120,10 @@ a:hover { text-decoration: underline; }
 .navbar-nav a:hover, .navbar-nav a.active { opacity: 1; text-decoration: underline; }
 
 
-/* 2. Alertas (Grid Layout) */
+
 .alert { 
     display: grid;
-    grid-template-columns: 24px 1fr; /* Ícone | Texto */
+    grid-template-columns: 24px 1fr; 
     gap: 15px;
     align-items: center;
     padding: 1rem; 
@@ -138,7 +135,7 @@ a:hover { text-decoration: underline; }
 .alert-danger { background-color: #f8d7da; color: #842029; border-color: #f5c2c7; }
 
 
-/* 3. Breadcrumb (Grid Layout) */
+
 .breadcrumb { 
     display: grid;
     grid-auto-flow: column;
@@ -156,7 +153,7 @@ a:hover { text-decoration: underline; }
 .breadcrumb-item.active { color: var(--cor-secundaria); font-weight: bold; }
 
 
-/* 4. Paginação (Grid Layout) */
+
 .pagination { 
     display: grid;
     grid-auto-flow: column;
