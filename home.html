@@ -2,61 +2,74 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Infoalunos-dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoAlunos - Início</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="dashboard-layout">
+        
         <aside class="sidebar">
+            
             <div class="sidebar-brand">Infoalunos</div>
+
             <div class="search-box">
                 <input type="text" placeholder="Pesquisar...">
             </div>
+
             <nav class="sidebar-menu">
-                <a href="#" class="menu-item active">Inicio</a>
+                
+                <a href="#" class="menu-item active">Início (Dashboard)</a>
+
                 <details class="menu-accordion">
                     <summary>Geral</summary>
                     <div class="submenu">
                         <a href="#">Processos</a>
                         <a href="#">Dados Pessoais</a>
-                        <a href="">Privacidade</a>
-                        <a href="">Ajuda</a>
+                        <a href="#">Privacidade</a>
+                        <a href="#">Ajuda</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
                     <summary>Serviços</summary>
                     <div class="submenu">
                         <a href="#">Pagamentos</a>
-                        <a href="#">Matriculas Inscrições</a>
-                        <a href="#">Inscrição em turmas</a>
+                        <a href="#">Matrículas Inscrições</a>
+                        <a href="#">Inscrição em Turmas</a>
                         <a href="#">Requerimentos</a>
                         <a href="#">Cartão Universitário</a>
-                        <a href="#">SASUMa-Bolasas</a>
+                        <a href="#">SASUMa-Bolsas</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
                     <summary>Concursos</summary>
                     <div class="submenu">
                         <a href="#">Candidaturas</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
                     <summary>Avaliação</summary>
                     <div class="submenu">
                         <a href="#">Pautas</a>
-                        <a href="#">Reclamação de notas</a>
-                        <a href="#">Inqueritos</a>
-                        <a href="#">Resultado de inqueritos</a>
-                        <a href="">Inquerito RAIDES</a>
+                        <a href="#">Reclamação de Notas</a>
+                        <a href="#">Inquéritos</a>
+                        <a href="#">Resultado Inquéritos</a>
+                        <a href="#">Inquérito RAIDES</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
                     <summary>Creditações</summary>
                     <div class="submenu">
-                        <a href="#">Lista processos</a>
-                        <a href="#">Novo processo</a>
+                        <a href="#">Lista Processos</a>
+                        <a href="#">Novo Processo</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
                     <summary>Documentos</summary>
                     <div class="submenu">
@@ -64,6 +77,7 @@
                         <a href="#">Declarações</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
                     <summary>Aulas</summary>
                     <div class="submenu">
@@ -71,77 +85,176 @@
                         <a href="#">Sumários</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
-                    <summary>Discilplina</summary>
+                    <summary>Disciplina</summary>
                     <div class="submenu">
                         <a href="#">Ficha</a>
                         <a href="#">Programa</a>
                         <a href="#">Ficheiros</a>
                     </div>
                 </details>
-                <details class="menu-accordion">
+
+                <details class="menu-accordion" open>
                     <summary>Curso</summary>
                     <div class="submenu">
-                        <a href="#">Ficha curricular</a>
+                        <a href="#">Ficha Curricular</a>
                         <a href="#">Horários</a>
-                        <a href="#">Histórico de Matriculas-inscrições</a>
-                        <a href="#">Histórico de Discilplinas aprovadas</a>
-                        <a href="#">Transição para bolonha</a>
-                        <a href="#">Plano de conclusões</a>
-                        <a href="#">Quadro de prescrição</a>
-                        <a href="#">Atividades académicas do aluno</a>
+                        <a href="#">Histórico de Matrículas</a>
+                        <a href="#">Disciplinas Aprovadas</a>
+                        <a href="#">Transição para Bolonha</a>
+                        <a href="#">Plano de Conclusão</a>
+                        <a href="#">Quadro de Prescrição</a>
+                        <a href="#">Atividades Académicas</a>
                     </div>
                 </details>
+
                 <details class="menu-accordion">
-                    <summary>Inatituição</summary>
+                    <summary>Instituição</summary>
                     <div class="submenu">
-                        <a href="#">Estrutura Organica</a>
+                        <a href="#">Estrutura Orgânica</a>
                     </div>
                 </details>
-                <a href="#" class="menu-item">Eleições</a>     
+                
+                <a href="#" class="menu-item">Eleições</a>
+
             </nav>
-            <div style="margin-top: 20px; font-size: 0.7rem; color: rgba(255,255,255,0.5); text-align: center;">
+
+            <div class="sidebar-footer">
                 Portugal 2030 . Madeira
             </div>
         </aside>
+
         <main class="main-content">
-            <h2>Conteúdo do dashboard (A desenvolver)</h2>
+            <h2>Conteúdo do Dashboard (A desenvolver)</h2>
         </main>
+
     </div>
-</body>
-<style>
-    dashboad-layout {
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .sidebar {
-        background-color: var(--cor-titulo);
-        color: white;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-        overflow-y: auto;
-        height:100%;
-    }
-    .sidebar::-webkit-scrollbar { width: 6px; }
-    .sidebar::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.3); border-radius: 10px; }
-    .sidebar::-webkit-scrollbar-track { background-color: transparent; }
 
-    .main-content {
-        background-color: #f4f6f9;
-        padding: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #999;
-    }
+    <style>
         
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden; 
+            background-color: #f4f6f9;
+        }
 
-    
-</style>
+        
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        
+        .sidebar {
+            background-color: #1E1A50; 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+            overflow-y: auto; 
+            height: 100%;
+            box-sizing: border-box;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            box-sizing: border-box;
+        }
+
+        
+        .menu-item, summary {
+            padding: 10px;
+            color: rgba(255,255,255,0.8) !important;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            list-style: none; 
+            font-weight: 500;
+        }
+
+        .menu-item:hover, summary:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white !important;
+            border-radius: 4px;
+        }
+
+        
+        .menu-item.active {
+            color: #3a8dff !important;
+            font-weight: bold;
+        }
+
+        
+        details[open] summary {
+            font-weight: 700;
+            color: white !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 5px;
+        }
+
+        
+        .submenu {
+            display: flex;
+            flex-direction: column; 
+            margin-left: 20px;
+            padding-bottom: 10px;
+        }
+
+        .submenu a {
+            padding: 5px 0;
+            color: rgba(255,255,255,0.6) !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block; 
+        }
+
+        .submenu a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+
+        
+        .sidebar-footer {
+            margin-top: auto;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            text-align: center;
+        }
+
+        
+        .main-content {
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+        }
+
+        
+        .sidebar::-webkit-scrollbar { width: 6px; }
+        .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
+    </style>
+</body>
+</html>
 
     
 

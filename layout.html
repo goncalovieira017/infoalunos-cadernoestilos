@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoAlunos - Pagamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">Infoalunos</div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">Início</a>
+                
+                <details class="menu-accordion" open>
+                    <summary style="color:white; font-weight:bold;">Serviços</summary>
+                    <div class="submenu">
+                        <a href="layout.html" class="active-link" style="color:white;">Pagamentos</a>
+                        <a href="carrinho_de_compras.html">Carrinho</a>
+                    </div>
+                </details>
+                
+                <a href="#" class="menu-item">Sair</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <h2 style="color: #1E1A50;">Conta Corrente</h2>
+            <p style="color: #666; margin-bottom: 30px;">Selecione as prestações a regularizar (até Maio):</p>
+
+            <div class="grelha-pagamentos">
+                
+                <div class="cartao">
+                    <span class="etiqueta-vermelha">ATRASO</span>
+                    <div class="emoji">⚠️</div>
+                    <h3>Coima Jan. 2026</h3>
+                    <p>Multa por atraso.</p>
+                    <a href="carrinho_de_compras.html" class="botao-adicionar">Pagar 15.00€</a>
+                </div>
+
+                <div class="cartao">
+                    <span class="etiqueta-azul">A VENCER</span>
+                    <div class="emoji">📅</div>
+                    <h3>Propina Jan. 2026</h3>
+                    <p>Prestação 5/10.</p>
+                    <a href="carrinho_de_compras.html" class="botao-adicionar">Pagar 69.70€</a>
+                </div>
+
+                <div class="cartao">
+                    <div class="emoji">📅</div>
+                    <h3>Propina Fev. 2026</h3>
+                    <p>Prestação 6/10.</p>
+                    <a href="carrinho_de_compras.html" class="botao-adicionar">Pagar 69.70€</a>
+                </div>
+
+                <div class="cartao">
+                    <div class="emoji">📅</div>
+                    <h3>Propina Mar. 2026</h3>
+                    <p>Prestação 7/10.</p>
+                    <a href="carrinho_de_compras.html" class="botao-adicionar">Pagar 69.70€</a>
+                </div>
+
+                <div class="cartao">
+                    <div class="emoji">📅</div>
+                    <h3>Propina Abr. 2026</h3>
+                    <p>Prestação 8/10.</p>
+                    <a href="carrinho_de_compras.html" class="botao-adicionar">Pagar 69.70€</a>
+                </div>
+
+                <div class="cartao">
+                    <div class="emoji">📅</div>
+                    <h3>Propina Mai. 2026</h3>
+                    <p>Prestação 9/10.</p>
+                    <a href="carrinho_de_compras.html" class="botao-adicionar">Pagar 69.70€</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <style>
+        
+        body { margin: 0; padding: 0; background-color: #f4f6f9; font-family: sans-serif; overflow: hidden; }
+        .dashboard-layout { display: grid; grid-template-columns: 280px 1fr; height: 100vh; }
+
+        
+        .sidebar { background-color: #1E1A50; color: white; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+        .sidebar-brand { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
+        .menu-item, summary { padding: 10px; color: rgba(255,255,255,0.8); text-decoration: none; display: block; cursor: pointer; }
+        .submenu { margin-left: 20px; display: flex; flex-direction: column; }
+        .submenu a { padding: 5px 0; color: rgba(255,255,255,0.6); text-decoration: none; display: block; }
+        
+        
+        .main-content { padding: 40px; overflow-y: auto; }
+
+        .grelha-pagamentos {
+            display: grid;
+            
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        
+        .cartao {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .cartao:hover { border-color: #1E1A50; }
+
+        .emoji { font-size: 3rem; margin-bottom: 10px; }
+        .cartao h3 { color: #1E1A50; font-size: 1.1rem; margin: 10px 0; }
+        .cartao p { color: #777; font-size: 0.9rem; margin-bottom: 20px; }
+
+        
+        .botao-adicionar {
+            display: block;
+            background-color: #1E1A50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .botao-adicionar:hover { background-color: #3a8dff; }
+
+        
+        .etiqueta-vermelha {
+            position: absolute; top: 10px; right: 10px;
+            background: #d9534f; color: white; font-size: 0.7rem; padding: 5px; border-radius: 4px;
+        }
+        .etiqueta-azul {
+            position: absolute; top: 10px; right: 10px;
+            background: #3a8dff; color: white; font-size: 0.7rem; padding: 5px; border-radius: 4px;
+        }
+    </style>
+</body>
+</html>

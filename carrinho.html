@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoAlunos - Carrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">Infoalunos</div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">Início</a>
+                <details class="menu-accordion" open>
+                    <summary style="color:white; font-weight:bold;">Serviços</summary>
+                    <div class="submenu">
+                        <a href="layout.html">Pagamentos</a>
+                        <a href="carrinho_de_compras.html" class="active-link" style="color:white;">Carrinho</a>
+                    </div>
+                </details>
+                <a href="#" class="menu-item">Sair</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div style="text-align: center; margin-top: 100px;">
+                <span style="font-size: 4rem;">🏧</span>
+                <h2 style="color:#1E1A50;">Pagamento Multibanco</h2>
+                <p style="color:#777;">Confirme os valores na barra lateral.</p>
+                <a href="layout.html" style="color: #3a8dff;">Adicionar mais meses</a>
+            </div>
+        </main>
+
+        <aside class="barra-carrinho">
+            
+            <h3 style="color: #1E1A50; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+                Selecionados (3)
+            </h3>
+
+            <div class="item-lista">
+                <div class="item-emoji">⚠️</div>
+                <div class="item-texto">
+                    <strong>Coima Jan. 2026</strong><br>
+                    <span style="color: #666;">Ref: Multa</span>
+                </div>
+                <div class="item-preco">15.00€</div>
+            </div>
+
+            <div class="item-lista">
+                <div class="item-emoji">📅</div>
+                <div class="item-texto">
+                    <strong>Propina Jan.</strong><br>
+                    <span style="color: #666;">Prestação 5</span>
+                </div>
+                <div class="item-preco">69.70€</div>
+            </div>
+
+            <div class="item-lista">
+                <div class="item-emoji">📅</div>
+                <div class="item-texto">
+                    <strong>Propina Fev.</strong><br>
+                    <span style="color: #666;">Prestação 6</span>
+                </div>
+                <div class="item-preco">69.70€</div>
+            </div>
+
+            <div class="area-total">
+                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 15px;">
+                    <span>Total:</span>
+                    <span>154.40€</span>
+                </div>
+                
+                <button class="botao-mb">Gerar Referência MB</button>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <style>
+        body { margin: 0; padding: 0; background-color: #f4f6f9; font-family: sans-serif; overflow: hidden; }
+        .dashboard-layout { display: grid; grid-template-columns: 280px 1fr 300px; height: 100vh; }
+
+        
+        .sidebar { background-color: #1E1A50; color: white; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+        .sidebar-brand { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
+        .menu-item, summary { padding: 10px; color: rgba(255,255,255,0.8); text-decoration: none; display: block; cursor: pointer; }
+        .submenu { margin-left: 20px; display: flex; flex-direction: column; }
+        .submenu a { padding: 5px 0; color: rgba(255,255,255,0.6); text-decoration: none; display: block; }
+
+        
+        .main-content { background-color: #eef2f5; }
+
+        
+        .barra-carrinho {
+            background: white;
+            border-left: 1px solid #ccc;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-lista {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .item-emoji { font-size: 1.5rem; }
+        .item-texto { flex: 1; font-size: 0.9rem; }
+        .item-preco { font-weight: bold; color: #1E1A50; }
+
+        .area-total { margin-top: auto; padding-top: 20px; }
+        
+        .botao-mb {
+            width: 100%;
+            padding: 15px;
+            background-color: #1E1A50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .botao-mb:hover { background-color: #3a8dff; }
+
+    </style>
+</body>
+</html>
