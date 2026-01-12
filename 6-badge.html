@@ -3,26 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>6. Badge</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .btn-anchor { anchor-name: --btn-msg; position: relative; }
-        .badge {
-            background: #dc3545; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;
-            position: absolute;
-            /* Anchor Positioning */
-            position-anchor: --btn-msg;
-            top: anchor(top); left: anchor(right);
-            translate: -50% -50%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div class="componente-container">
+    <div class="componente-container" style="padding: 20px;">
         <h1>6. Badge (Anchor Positioning)</h1>
+        
         <button class="btn btn-primary btn-anchor">
             Mensagens <span class="badge">9+</span>
         </button>
     </div>
-    <footer class="footer-uma"><div class="footer-box">PORTUGAL 2030</div><div class="footer-box">MADEIRA +</div><div class="footer-box">UNIÃO EUROPEIA</div></footer>
+
+    <footer class="footer-uma">
+        <div class="footer-box">PORTUGAL 2030</div>
+        <div class="footer-box">MADEIRA +</div>
+        <div class="footer-box">UNIÃO EUROPEIA</div>
+    </footer>
 </body>
 </html>

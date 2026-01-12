@@ -3,19 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - InfoAlunos</title>
+    <title>RAIDES - InfoAlunos</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Layout específico desta página */
-        .grid-checkout { display: grid; gap: 20px; grid-template-columns: 1fr 350px; }
-        @media (width < 900px) { .grid-checkout { grid-template-columns: 1fr; } }
-        
-        .caixa-referencia {
-            background: var(--cor-painel); border: 2px solid var(--cor-primaria);
-            padding: 20px; border-radius: 8px; text-align: center;
-        }
-        .item-carrinho { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--cor-borda); }
-    </style>
 </head>
 <body>
     <input type="checkbox" id="menu-toggle">
@@ -45,11 +34,11 @@
                     </div>
                 </details>
 
-                <details open>
+                <details>
                     <summary>Serviços</summary>
                     <div class="submenu">
                         <a href="servicos_pagamentos.html">Pagamentos</a>
-                        <a href="carrinho.html" class="active" style="color:white; font-weight:bold;">Carrinho</a>
+                        <a href="carrinho.html">Carrinho</a>
                         <a href="servicos_matriculas.html">Matrículas Inscrições</a>
                         <a href="servicos_turmas.html">Inscrição em Turmas</a>
                         <a href="servicos_requerimentos.html">Requerimentos</a>
@@ -65,14 +54,14 @@
                     </div>
                 </details>
 
-                <details>
+                <details open>
                     <summary>Avaliação</summary>
                     <div class="submenu">
                         <a href="avaliacao_pautas.html">Pautas</a>
                         <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
                         <a href="avaliacao_inqueritos.html">Inquéritos</a>
                         <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
-                        <a href="avaliacao_raides.html">Inquérito RAIDES</a>
+                        <a href="avaliacao_raides.html" class="active" style="color:white; font-weight:bold;">Inquérito RAIDES</a>
                     </div>
                 </details>
 
@@ -141,79 +130,74 @@
 
         <main class="main-content">
             <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <h1>Inquérito RAIDES</h1>
+            <p>Registo Anual de Inscritos e Diplomados no Ensino Superior.</p>
 
-            <h1>Finalizar Pagamento</h1>
-            <p>Gonçalo Vieira (2168025)</p>
-
-            <div class="grid-checkout">
-                
-                <div class="card-wrapper">
-                    <h3>Método de Pagamento</h3>
-                    
-                    <input type="radio" name="pagamento" id="pay-mb" class="tab-input" checked>
-                    <input type="radio" name="pagamento" id="pay-mbway" class="tab-input">
-                    <input type="radio" name="pagamento" id="pay-visa" class="tab-input">
-
-                    <div class="tabs-labels" style="display: flex; gap: 10px; margin: 15px 0;">
-                        <label for="pay-mb" class="tab-label">Multibanco</label>
-                        <label for="pay-mbway" class="tab-label">MB WAY</label>
-                        <label for="pay-visa" class="tab-label">Cartão</label>
-                    </div>
-
-                    <div id="content-mb" class="tab-content">
-                        <div class="caixa-referencia">
-                            <h4>Entidade: 12345</h4>
-                            <h4>Referência: 999 888 777</h4>
-                            <h2 style="margin: 10px 0; color: var(--cor-primaria);">154.40 €</h2>
-                            <small style="color: var(--cor-perigo);">Válido até 24h</small>
-                        </div>
-                        <div class="alert alert-info" style="margin-top: 20px;">
-                            <span>ℹ️ O pagamento será processado automaticamente.</span>
-                        </div>
-                    </div>
-
-                    <div id="content-mbway" class="tab-content">
-                        <div class="caixa-referencia">
-                            <label>Nº de Telemóvel</label>
-                            <input type="tel" value="961234567" style="text-align:center; width: 100%; margin-bottom: 10px;">
-                            <button class="btn btn-primary">Enviar Pedido MB WAY</button>
-                        </div>
-                    </div>
-
-                    <div id="content-visa" class="tab-content">
-                        <div class="caixa-referencia">
-                            <p>Será redirecionado para a gateway de pagamento seguro (Reduniq).</p>
-                            <button class="btn btn-primary">Pagar Seguro 🔒</button>
-                        </div>
-                    </div>
-
-                    <a href="servicos_pagamentos.html" style="display: inline-block; margin-top: 20px; text-decoration: underline;">← Voltar aos Pagamentos</a>
-                </div>
-
-                <div class="card-wrapper" style="height: fit-content;">
-                    <h3 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 10px;">Resumo (3)</h3>
-                    
-                    <div class="item-carrinho">
-                        <div><strong>Coima Jan. 2026</strong><br><small>Multa Atraso</small></div>
-                        <div style="font-weight: bold;">15.00€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Jan.</strong><br><small>Prestação 5</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Fev.</strong><br><small>Prestação 6</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-
-                    <div style="margin-top: 20px; border-top: 2px solid var(--cor-borda); padding-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
-                            <span>Total:</span>
-                            <span style="color: var(--cor-primaria);">154.40€</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="alert alert-danger" style="margin-top: 20px;">
+                <span>⚠️ O preenchimento deste inquérito é <strong>obrigatório</strong> para todos os alunos inscritos.</span>
             </div>
+
+            <div class="card-wrapper" style="margin-top: 20px; text-align: center; border: 2px solid var(--cor-perigo);">
+                <h3 style="color: var(--cor-perigo);">ESTADO: EM FALTA</h3>
+                <p>Por favor, preencha os dados abaixo para regularizar a sua situação.</p>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <details open>
+                    <summary style="background: var(--cor-primaria); color: white;">Preencher Dados RAIDES</summary>
+                    <div class="conteudo-accordion">
+                        <form style="display: grid; gap: 20px; max-width: 800px;">
+                            
+                            <div>
+                                <h4 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 5px;">1. Habilitações dos Pais</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                                    <div>
+                                        <label>Escolaridade Mãe</label>
+                                        <select>
+                                            <option>Ensino Secundário (12º ano)</option>
+                                            <option>Ensino Superior</option>
+                                            <option>Ensino Básico</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Escolaridade Pai</label>
+                                        <select>
+                                            <option>Ensino Secundário (12º ano)</option>
+                                            <option>Ensino Superior</option>
+                                            <option>Ensino Básico</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 5px;">2. Situação Profissional</h4>
+                                <div style="margin-top: 10px;">
+                                    <label>O aluno encontra-se empregado?</label>
+                                    <select>
+                                        <option>Não</option>
+                                        <option>Sim, a tempo inteiro</option>
+                                        <option>Sim, em part-time</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 5px;">3. Deslocação</h4>
+                                <div style="margin-top: 10px;">
+                                    <label>Tempo médio de deslocação para a Universidade (minutos)</label>
+                                    <input type="number" placeholder="Ex: 30">
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary">Submeter RAIDES</button>
+
+                        </form>
+                    </div>
+                </details>
+            </div>
+
         </main>
     </div>
 </body>

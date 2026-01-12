@@ -10,9 +10,9 @@
         summary { grid-row: 1; padding: 15px; border-bottom: 2px solid #ddd; cursor: pointer; text-align: center; font-weight: bold;}
         details[open] summary { border-bottom: 2px solid var(--cor-primaria); color: var(--cor-primaria); }
         details div { grid-column: 1 / -1; grid-row: 2; padding: 20px; border: 1px solid #ddd; border-top: none; }
-        /* Esconde conteúdo de não abertos */
+     
         details:not([open]) div { display: none; }
-        /* Posicionamento manual (fallback) */
+        
         details:nth-of-type(1) summary { grid-column: 1; }
         details:nth-of-type(2) summary { grid-column: 2; }
         details:nth-of-type(3) summary { grid-column: 3; }

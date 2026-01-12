@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - InfoAlunos</title>
+    <title>Pagamentos - InfoAlunos</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Layout específico desta página */
-        .grid-checkout { display: grid; gap: 20px; grid-template-columns: 1fr 350px; }
-        @media (width < 900px) { .grid-checkout { grid-template-columns: 1fr; } }
-        
-        .caixa-referencia {
-            background: var(--cor-painel); border: 2px solid var(--cor-primaria);
-            padding: 20px; border-radius: 8px; text-align: center;
+        /* Estilos específicos apenas para esta página */
+        .grid-pagamentos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-        .item-carrinho { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--cor-borda); }
+        .card-pagamento {
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .emoji-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+        
+        /* Etiquetas de estado */
+        .tag-estado {
+            position: absolute; top: 10px; right: 10px;
+            padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; color: white;
+        }
+        .tag-atraso { background-color: var(--cor-perigo); }
+        .tag-aviso { background-color: #ffc107; color: black; }
     </style>
 </head>
 <body>
@@ -48,8 +63,8 @@
                 <details open>
                     <summary>Serviços</summary>
                     <div class="submenu">
-                        <a href="servicos_pagamentos.html">Pagamentos</a>
-                        <a href="carrinho.html" class="active" style="color:white; font-weight:bold;">Carrinho</a>
+                        <a href="servicos_pagamentos.html" class="active" style="color:white; font-weight:bold;">Pagamentos</a>
+                        <a href="carrinho.html">Carrinho</a>
                         <a href="servicos_matriculas.html">Matrículas Inscrições</a>
                         <a href="servicos_turmas.html">Inscrição em Turmas</a>
                         <a href="servicos_requerimentos.html">Requerimentos</a>
@@ -140,80 +155,83 @@
         </aside>
 
         <main class="main-content">
+            
             <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
 
-            <h1>Finalizar Pagamento</h1>
-            <p>Gonçalo Vieira (2168025)</p>
-
-            <div class="grid-checkout">
-                
-                <div class="card-wrapper">
-                    <h3>Método de Pagamento</h3>
-                    
-                    <input type="radio" name="pagamento" id="pay-mb" class="tab-input" checked>
-                    <input type="radio" name="pagamento" id="pay-mbway" class="tab-input">
-                    <input type="radio" name="pagamento" id="pay-visa" class="tab-input">
-
-                    <div class="tabs-labels" style="display: flex; gap: 10px; margin: 15px 0;">
-                        <label for="pay-mb" class="tab-label">Multibanco</label>
-                        <label for="pay-mbway" class="tab-label">MB WAY</label>
-                        <label for="pay-visa" class="tab-label">Cartão</label>
-                    </div>
-
-                    <div id="content-mb" class="tab-content">
-                        <div class="caixa-referencia">
-                            <h4>Entidade: 12345</h4>
-                            <h4>Referência: 999 888 777</h4>
-                            <h2 style="margin: 10px 0; color: var(--cor-primaria);">154.40 €</h2>
-                            <small style="color: var(--cor-perigo);">Válido até 24h</small>
-                        </div>
-                        <div class="alert alert-info" style="margin-top: 20px;">
-                            <span>ℹ️ O pagamento será processado automaticamente.</span>
-                        </div>
-                    </div>
-
-                    <div id="content-mbway" class="tab-content">
-                        <div class="caixa-referencia">
-                            <label>Nº de Telemóvel</label>
-                            <input type="tel" value="961234567" style="text-align:center; width: 100%; margin-bottom: 10px;">
-                            <button class="btn btn-primary">Enviar Pedido MB WAY</button>
-                        </div>
-                    </div>
-
-                    <div id="content-visa" class="tab-content">
-                        <div class="caixa-referencia">
-                            <p>Será redirecionado para a gateway de pagamento seguro (Reduniq).</p>
-                            <button class="btn btn-primary">Pagar Seguro 🔒</button>
-                        </div>
-                    </div>
-
-                    <a href="servicos_pagamentos.html" style="display: inline-block; margin-top: 20px; text-decoration: underline;">← Voltar aos Pagamentos</a>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 10px;">
+                <div>
+                    <h1>Conta Corrente</h1>
+                    <p>Gonçalo Vieira (2168025) - TESP TPSI</p>
                 </div>
-
-                <div class="card-wrapper" style="height: fit-content;">
-                    <h3 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 10px;">Resumo (3)</h3>
-                    
-                    <div class="item-carrinho">
-                        <div><strong>Coima Jan. 2026</strong><br><small>Multa Atraso</small></div>
-                        <div style="font-weight: bold;">15.00€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Jan.</strong><br><small>Prestação 5</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Fev.</strong><br><small>Prestação 6</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-
-                    <div style="margin-top: 20px; border-top: 2px solid var(--cor-borda); padding-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
-                            <span>Total:</span>
-                            <span style="color: var(--cor-primaria);">154.40€</span>
-                        </div>
-                    </div>
-                </div>
+                <a href="carrinho.html" class="btn btn-secondary">🛒 Ver Carrinho</a>
             </div>
+
+            <div class="grid-pagamentos">
+                
+                <div class="card-wrapper card-pagamento" style="border-color: var(--cor-perigo);">
+                    <span class="tag-estado tag-atraso">EM ATRASO</span>
+                    <div>
+                        <span class="emoji-icon">⚠️</span>
+                        <h3>Coima Jan. 2026</h3>
+                        <p style="font-size: 0.9rem; color: gray;">Multa por atraso propina</p>
+                    </div>
+                    <div>
+                        <h2 style="color: var(--cor-perigo);">15.00€</h2>
+                        <a href="carrinho.html" class="btn btn-danger" style="width: 100%;">Pagar Agora</a>
+                    </div>
+                </div>
+
+                <div class="card-wrapper card-pagamento">
+                    <span class="tag-estado tag-aviso">A VENCER</span>
+                    <div>
+                        <span class="emoji-icon">📅</span>
+                        <h3>Propina Jan. 2026</h3>
+                        <p style="font-size: 0.9rem; color: gray;">Prestação 5/10</p>
+                    </div>
+                    <div>
+                        <h2>69.70€</h2>
+                        <a href="carrinho.html" class="btn btn-primary" style="width: 100%;">Adicionar</a>
+                    </div>
+                </div>
+
+                <div class="card-wrapper card-pagamento">
+                    <div>
+                        <span class="emoji-icon">📅</span>
+                        <h3>Propina Fev. 2026</h3>
+                        <p style="font-size: 0.9rem; color: gray;">Prestação 6/10</p>
+                    </div>
+                    <div>
+                        <h2>69.70€</h2>
+                        <a href="carrinho.html" class="btn btn-primary" style="width: 100%;">Adicionar</a>
+                    </div>
+                </div>
+
+                <div class="card-wrapper card-pagamento">
+                    <div>
+                        <span class="emoji-icon">📅</span>
+                        <h3>Propina Mar. 2026</h3>
+                        <p style="font-size: 0.9rem; color: gray;">Prestação 7/10</p>
+                    </div>
+                    <div>
+                        <h2>69.70€</h2>
+                        <a href="carrinho.html" class="btn btn-primary" style="width: 100%;">Adicionar</a>
+                    </div>
+                </div>
+
+                 <div class="card-wrapper card-pagamento">
+                    <div>
+                        <span class="emoji-icon">📅</span>
+                        <h3>Propina Abr. 2026</h3>
+                        <p style="font-size: 0.9rem; color: gray;">Prestação 8/10</p>
+                    </div>
+                    <div>
+                        <h2>69.70€</h2>
+                        <a href="carrinho.html" class="btn btn-primary" style="width: 100%;">Adicionar</a>
+                    </div>
+                </div>
+
+            </div>
+
         </main>
     </div>
 </body>

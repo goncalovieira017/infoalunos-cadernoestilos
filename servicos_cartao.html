@@ -3,19 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - InfoAlunos</title>
+    <title>Cartão - InfoAlunos</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Layout específico desta página */
-        .grid-checkout { display: grid; gap: 20px; grid-template-columns: 1fr 350px; }
-        @media (width < 900px) { .grid-checkout { grid-template-columns: 1fr; } }
-        
-        .caixa-referencia {
-            background: var(--cor-painel); border: 2px solid var(--cor-primaria);
-            padding: 20px; border-radius: 8px; text-align: center;
-        }
-        .item-carrinho { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--cor-borda); }
-    </style>
 </head>
 <body>
     <input type="checkbox" id="menu-toggle">
@@ -49,11 +38,11 @@
                     <summary>Serviços</summary>
                     <div class="submenu">
                         <a href="servicos_pagamentos.html">Pagamentos</a>
-                        <a href="carrinho.html" class="active" style="color:white; font-weight:bold;">Carrinho</a>
+                        <a href="carrinho.html">Carrinho</a>
                         <a href="servicos_matriculas.html">Matrículas Inscrições</a>
                         <a href="servicos_turmas.html">Inscrição em Turmas</a>
                         <a href="servicos_requerimentos.html">Requerimentos</a>
-                        <a href="servicos_cartao.html">Cartão Universitário</a>
+                        <a href="servicos_cartao.html" class="active" style="color:white; font-weight:bold;">Cartão Universitário</a>
                         <a href="servicos_bolsas.html">SASUMa-Bolsas</a>
                     </div>
                 </details>
@@ -142,78 +131,66 @@
         <main class="main-content">
             <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
 
-            <h1>Finalizar Pagamento</h1>
-            <p>Gonçalo Vieira (2168025)</p>
+            <h1>Cartão Universitário</h1>
+            <p>Identificação digital e gestão do cartão físico.</p>
 
-            <div class="grid-checkout">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px;">
                 
-                <div class="card-wrapper">
-                    <h3>Método de Pagamento</h3>
-                    
-                    <input type="radio" name="pagamento" id="pay-mb" class="tab-input" checked>
-                    <input type="radio" name="pagamento" id="pay-mbway" class="tab-input">
-                    <input type="radio" name="pagamento" id="pay-visa" class="tab-input">
+                <div>
+                    <div style="background: linear-gradient(135deg, var(--cor-primaria), #4a4e8e); color: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); position: relative; overflow: hidden; height: 200px;">
+                        
+                        <div style="position: absolute; right: -20px; bottom: -20px; font-size: 8rem; opacity: 0.1; font-weight: bold;">UMa</div>
 
-                    <div class="tabs-labels" style="display: flex; gap: 10px; margin: 15px 0;">
-                        <label for="pay-mb" class="tab-label">Multibanco</label>
-                        <label for="pay-mbway" class="tab-label">MB WAY</label>
-                        <label for="pay-visa" class="tab-label">Cartão</label>
-                    </div>
-
-                    <div id="content-mb" class="tab-content">
-                        <div class="caixa-referencia">
-                            <h4>Entidade: 12345</h4>
-                            <h4>Referência: 999 888 777</h4>
-                            <h2 style="margin: 10px 0; color: var(--cor-primaria);">154.40 €</h2>
-                            <small style="color: var(--cor-perigo);">Válido até 24h</small>
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                            <div>
+                                <h3 style="color: white; margin: 0; font-size: 1.2rem;">Universidade da Madeira</h3>
+                                <small style="opacity: 0.8;">Cartão de Estudante</small>
+                            </div>
+                            <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: var(--cor-primaria); font-weight: bold;">
+                                GV
+                            </div>
                         </div>
-                        <div class="alert alert-info" style="margin-top: 20px;">
-                            <span>ℹ️ O pagamento será processado automaticamente.</span>
-                        </div>
-                    </div>
 
-                    <div id="content-mbway" class="tab-content">
-                        <div class="caixa-referencia">
-                            <label>Nº de Telemóvel</label>
-                            <input type="tel" value="961234567" style="text-align:center; width: 100%; margin-bottom: 10px;">
-                            <button class="btn btn-primary">Enviar Pedido MB WAY</button>
+                        <div style="position: absolute; bottom: 25px; left: 25px;">
+                            <h2 style="color: white; margin: 0; letter-spacing: 1px; font-size: 1.4rem;">Gonçalo Vieira</h2>
+                            <p style="margin: 5px 0 0 0; opacity: 0.9; font-family: monospace; font-size: 1.1rem;">2168025</p>
+                        </div>
+
+                        <div style="position: absolute; bottom: 25px; right: 25px; text-align: right;">
+                            <small style="display: block; opacity: 0.7;">Validade</small>
+                            <strong>09/2026</strong>
                         </div>
                     </div>
 
-                    <div id="content-visa" class="tab-content">
-                        <div class="caixa-referencia">
-                            <p>Será redirecionado para a gateway de pagamento seguro (Reduniq).</p>
-                            <button class="btn btn-primary">Pagar Seguro 🔒</button>
-                        </div>
-                    </div>
-
-                    <a href="servicos_pagamentos.html" style="display: inline-block; margin-top: 20px; text-decoration: underline;">← Voltar aos Pagamentos</a>
+                    <p style="text-align: center; margin-top: 10px; color: gray; font-size: 0.9rem;">
+                        Este cartão digital é válido para identificação no campus.
+                    </p>
                 </div>
 
                 <div class="card-wrapper" style="height: fit-content;">
-                    <h3 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 10px;">Resumo (3)</h3>
+                    <h3>Gestão do Cartão</h3>
+                    <p>O seu cartão físico encontra-se <strong>Ativo</strong>.</p>
                     
-                    <div class="item-carrinho">
-                        <div><strong>Coima Jan. 2026</strong><br><small>Multa Atraso</small></div>
-                        <div style="font-weight: bold;">15.00€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Jan.</strong><br><small>Prestação 5</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Fev.</strong><br><small>Prestação 6</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
+                    <div style="display: grid; gap: 10px; margin-top: 20px;">
+                        <button class="btn btn-secondary" style="text-align: left;">
+                            🔐 <strong>Bloquear Cartão</strong><br>
+                            <small>Em caso de perda ou roubo</small>
+                        </button>
+                        
+                        <button class="btn btn-secondary" style="text-align: left;">
+                            💳 <strong>Pedir 2ª Via</strong><br>
+                            <small>Custo associado: 10.00€</small>
+                        </button>
 
-                    <div style="margin-top: 20px; border-top: 2px solid var(--cor-borda); padding-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
-                            <span>Total:</span>
-                            <span style="color: var(--cor-primaria);">154.40€</span>
-                        </div>
+                        <button class="btn btn-secondary" style="text-align: left;">
+                            🏦 <strong>Associar Bancário</strong><br>
+                            <small>Ligar à conta Caixa Geral de Depósitos</small>
+                        </button>
                     </div>
                 </div>
+
             </div>
+
         </main>
     </div>
 </body>

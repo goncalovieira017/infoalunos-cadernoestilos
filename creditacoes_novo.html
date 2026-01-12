@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Processo - InfoAlunos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ESTILO IGUAL AO CARRINHO 
+           (Copiado da lógica das abas do MBWAY/Cartão)
+        */
+        .tab-radio { display: none; }
+        
+        .tab-header {
+            display: flex;
+            gap: 10px; /* Espaço entre botões */
+            margin-bottom: 20px;
+        }
+
+        .tab-label {
+            padding: 10px;
+            background: var(--cor-secundaria); /* Cinzento (Inativo) */
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            opacity: 0.6; /* Meio transparente quando inativo */
+            flex: 1;
+            text-align: center;
+            font-weight: normal;
+            transition: all 0.2s;
+        }
+
+        .tab-label:hover { opacity: 0.8; }
+
+        /* Quando o input X está marcado, o botão X fica AZUL e Opaco */
+        #tab1:checked ~ .tab-header label[for="tab1"],
+        #tab2:checked ~ .tab-header label[for="tab2"],
+        #tab3:checked ~ .tab-header label[for="tab3"] {
+            background: var(--cor-primaria); /* Azul (Ativo) */
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        /* Conteúdo das Abas */
+        .tab-content { display: none; }
+        
+        #tab1:checked ~ .tab-body #content-novo { display: block; }
+        #tab2:checked ~ .tab-body #content-plano { display: block; }
+        #tab3:checked ~ .tab-body #content-docs { display: block; }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="sidebar-brand">InfoAlunos</div>
+                <label for="menu-toggle" class="btn-mobile-toggle" style="background:none; border:none; margin:0; cursor:pointer;">✕</label>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input type="text" placeholder="Pesquisar..." style="width: 100%;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="home.html" class="menu-item">Início (Dashboard)</a>
+
+                <details>
+                    <summary>Geral</summary>
+                    <div class="submenu">
+                        <a href="geral_processos.html">Processos</a>
+                        <a href="geral_dados.html">Dados Pessoais</a>
+                        <a href="geral_privacidade.html">Privacidade</a>
+                        <a href="geral_ajuda.html">Ajuda</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Serviços</summary>
+                    <div class="submenu">
+                        <a href="servicos_pagamentos.html">Pagamentos</a>
+                        <a href="carrinho.html">Carrinho</a>
+                        <a href="servicos_matriculas.html">Matrículas Inscrições</a>
+                        <a href="servicos_turmas.html">Inscrição em Turmas</a>
+                        <a href="servicos_requerimentos.html">Requerimentos</a>
+                        <a href="servicos_cartao.html">Cartão Universitário</a>
+                        <a href="servicos_bolsas.html">SASUMa-Bolsas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Concursos</summary>
+                    <div class="submenu">
+                        <a href="concursos_candidaturas.html">Candidaturas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Avaliação</summary>
+                    <div class="submenu">
+                        <a href="avaliacao_pautas.html">Pautas</a>
+                        <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
+                        <a href="avaliacao_inqueritos.html">Inquéritos</a>
+                        <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
+                        <a href="avaliacao_raides.html">Inquérito RAIDES</a>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Creditações</summary>
+                    <div class="submenu">
+                        <a href="creditacoes_lista.html">Histórico</a>
+                        <a href="creditacoes_novo.html" class="active" style="color:white; font-weight:bold;">Novo Processo</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Documentos</summary>
+                    <div class="submenu">
+                        <a href="documentos_academicos.html">Académicos</a>
+                        <a href="documentos_declaracoes.html">Declarações</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aulas</summary>
+                    <div class="submenu">
+                        <a href="aulas_calendario.html">Calendário</a>
+                        <a href="aulas_sumarios.html">Sumários</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Disciplina</summary>
+                    <div class="submenu">
+                        <a href="disciplina_ficha.html">Ficha</a>
+                        <a href="disciplina_programa.html">Programa</a>
+                        <a href="disciplina_ficheiros.html">Ficheiros</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Curso</summary>
+                    <div class="submenu">
+                        <a href="curso_ficha.html">Ficha Curricular</a>
+                        <a href="curso_horarios.html">Horários</a>
+                        <a href="curso_historico.html">Histórico de Matrículas</a>
+                        <a href="curso_aprovadas.html">Disciplinas Aprovadas</a>
+                        <a href="curso_transicao.html">Transição para Bolonha</a>
+                        <a href="curso_conclusao.html">Plano de Conclusão</a>
+                        <a href="curso_prescricao.html">Quadro de Prescrição</a>
+                        <a href="curso_atividades.html">Atividades Académicas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Instituição</summary>
+                    <div class="submenu">
+                        <a href="instituicao_estrutura.html">Estrutura Orgânica</a>
+                    </div>
+                </details>
+                
+                <a href="eleicoes.html" class="menu-item">Eleições</a>
+                <a href="login.html" class="menu-item" style="margin-top: auto; color: #ffadad;">Sair</a>
+            </nav>
+
+            <div style="margin-top: auto; font-size: 0.7rem; opacity: 0.5; text-align: center;">
+                Portugal 2030 . Madeira
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <h1>Pedido de Creditação</h1>
+
+            <div class="card-wrapper">
+                
+                <input type="radio" name="tabs" id="tab1" class="tab-radio" checked>
+                <input type="radio" name="tabs" id="tab2" class="tab-radio">
+                <input type="radio" name="tabs" id="tab3" class="tab-radio">
+
+                <div class="tab-header">
+                    <label for="tab1" class="tab-label">Novo-Alterar</label>
+                    <label for="tab2" class="tab-label">Plano de Formação</label>
+                    <label for="tab3" class="tab-label">Documentos</label>
+                </div>
+
+                <div class="tab-body">
+                    
+                    <div id="content-novo" class="tab-content">
+                        <h3>Identificação do Processo</h3>
+                        <form style="display: grid; gap: 15px; margin-top: 15px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <label>Ano Letivo</label>
+                                    <input type="text" value="2025/2026" readonly>
+                                </div>
+                                <div>
+                                    <label>Tipo de Processo</label>
+                                    <select>
+                                        <option>Formação Certificada</option>
+                                        <option>Experiência Profissional</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label>Instituição de Origem</label>
+                                <input type="text" placeholder="Ex: Universidade de Lisboa">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <label>Curso de Origem</label>
+                                    <input type="text" placeholder="Ex: Engenharia Informática">
+                                </div>
+                                <div>
+                                    <label>Ciclo de Estudos</label>
+                                    <select>
+                                        <option>Licenciatura (1º Ciclo)</option>
+                                        <option>Mestrado (2º Ciclo)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="text-align: right; margin-top: 20px;">
+                                <label for="tab2" class="btn btn-primary">Seguinte: Plano →</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="content-plano" class="tab-content">
+                        <h3>Plano de Equivalências</h3>
+                        <p style="margin-bottom: 15px;">Associe as unidades curriculares que concluiu às que pretende dispensar.</p>
+
+                        <table class="table" style="margin-bottom: 15px;">
+                            <thead>
+                                <tr>
+                                    <th>Unidade Origem (Já feita)</th>
+                                    <th>Unidade Destino (A pedir)</th>
+                                    <th>ECTS</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" placeholder="Disciplina Origem..." style="width: 100%;"></td>
+                                    <td><input type="text" placeholder="Disciplina Destino..." style="width: 100%;"></td>
+                                    <td><input type="number" placeholder="6" style="width: 60px;"></td>
+                                    <td><button class="btn btn-danger" style="padding: 5px;">✕</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="btn btn-secondary" style="width: 100%;">+ Adicionar Linha</button>
+
+                        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                            <label for="tab1" class="btn btn-secondary">← Voltar</label>
+                            <label for="tab3" class="btn btn-primary">Seguinte: Documentos →</label>
+                        </div>
+                    </div>
+
+                    <div id="content-docs" class="tab-content">
+                        <h3>Documentação Obrigatória</h3>
+                        
+                        <div style="margin-top: 15px;">
+                            <label>1. Certificado de Habilitações (Com notas discriminadas)</label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="file" style="flex: 1;">
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 15px;">
+                            <label>2. Programas das Unidades Curriculares (Ementas)</label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="file" style="flex: 1;">
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info" style="margin-top: 20px;">
+                            <span>ℹ️ O processo tem um custo de emolumentos de 25,00€.</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                            <label for="tab2" class="btn btn-secondary">← Voltar</label>
+                            <a href="creditacoes_lista.html" class="btn btn-primary">Submeter Processo</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

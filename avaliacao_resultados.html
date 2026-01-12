@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - InfoAlunos</title>
+    <title>Resultados Inquéritos - InfoAlunos</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Layout específico desta página */
-        .grid-checkout { display: grid; gap: 20px; grid-template-columns: 1fr 350px; }
-        @media (width < 900px) { .grid-checkout { grid-template-columns: 1fr; } }
-        
-        .caixa-referencia {
-            background: var(--cor-painel); border: 2px solid var(--cor-primaria);
-            padding: 20px; border-radius: 8px; text-align: center;
+        /* CSS para "Gráfico de Barras" simples */
+        .barra-container {
+            background: rgba(0,0,0,0.1);
+            border-radius: 4px;
+            height: 20px;
+            width: 100%;
+            margin-top: 5px;
+            overflow: hidden;
         }
-        .item-carrinho { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--cor-borda); }
+        .barra-valor {
+            height: 100%;
+            background: var(--cor-primaria);
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -45,11 +50,11 @@
                     </div>
                 </details>
 
-                <details open>
+                <details>
                     <summary>Serviços</summary>
                     <div class="submenu">
                         <a href="servicos_pagamentos.html">Pagamentos</a>
-                        <a href="carrinho.html" class="active" style="color:white; font-weight:bold;">Carrinho</a>
+                        <a href="carrinho.html">Carrinho</a>
                         <a href="servicos_matriculas.html">Matrículas Inscrições</a>
                         <a href="servicos_turmas.html">Inscrição em Turmas</a>
                         <a href="servicos_requerimentos.html">Requerimentos</a>
@@ -65,13 +70,13 @@
                     </div>
                 </details>
 
-                <details>
+                <details open>
                     <summary>Avaliação</summary>
                     <div class="submenu">
                         <a href="avaliacao_pautas.html">Pautas</a>
                         <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
                         <a href="avaliacao_inqueritos.html">Inquéritos</a>
-                        <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
+                        <a href="avaliacao_resultados.html" class="active" style="color:white; font-weight:bold;">Resultado Inquéritos</a>
                         <a href="avaliacao_raides.html">Inquérito RAIDES</a>
                     </div>
                 </details>
@@ -141,79 +146,75 @@
 
         <main class="main-content">
             <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <h1>Resultados dos Inquéritos</h1>
+            <p>Consulte os relatórios globais de avaliação pedagógica do seu curso.</p>
 
-            <h1>Finalizar Pagamento</h1>
-            <p>Gonçalo Vieira (2168025)</p>
-
-            <div class="grid-checkout">
+            <div class="card-wrapper" style="margin-top: 20px;">
+                <h3>Satisfação Global do Curso (TESP-TPSI)</h3>
+                <p style="color: gray; margin-bottom: 20px; font-size: 0.9rem;">Média das respostas dos alunos nos últimos 3 anos.</p>
                 
-                <div class="card-wrapper">
-                    <h3>Método de Pagamento</h3>
-                    
-                    <input type="radio" name="pagamento" id="pay-mb" class="tab-input" checked>
-                    <input type="radio" name="pagamento" id="pay-mbway" class="tab-input">
-                    <input type="radio" name="pagamento" id="pay-visa" class="tab-input">
-
-                    <div class="tabs-labels" style="display: flex; gap: 10px; margin: 15px 0;">
-                        <label for="pay-mb" class="tab-label">Multibanco</label>
-                        <label for="pay-mbway" class="tab-label">MB WAY</label>
-                        <label for="pay-visa" class="tab-label">Cartão</label>
-                    </div>
-
-                    <div id="content-mb" class="tab-content">
-                        <div class="caixa-referencia">
-                            <h4>Entidade: 12345</h4>
-                            <h4>Referência: 999 888 777</h4>
-                            <h2 style="margin: 10px 0; color: var(--cor-primaria);">154.40 €</h2>
-                            <small style="color: var(--cor-perigo);">Válido até 24h</small>
+                <div style="display: grid; gap: 15px;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>2024/2025</span>
+                            <strong>4.5 / 5.0</strong>
                         </div>
-                        <div class="alert alert-info" style="margin-top: 20px;">
-                            <span>ℹ️ O pagamento será processado automaticamente.</span>
+                        <div class="barra-container"><span class="barra-valor" style="width: 90%;"></span></div>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>2023/2024</span>
+                            <strong>4.2 / 5.0</strong>
                         </div>
+                        <div class="barra-container"><span class="barra-valor" style="width: 84%; opacity: 0.8;"></span></div>
                     </div>
 
-                    <div id="content-mbway" class="tab-content">
-                        <div class="caixa-referencia">
-                            <label>Nº de Telemóvel</label>
-                            <input type="tel" value="961234567" style="text-align:center; width: 100%; margin-bottom: 10px;">
-                            <button class="btn btn-primary">Enviar Pedido MB WAY</button>
+                    <div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>2022/2023</span>
+                            <strong>4.0 / 5.0</strong>
                         </div>
-                    </div>
-
-                    <div id="content-visa" class="tab-content">
-                        <div class="caixa-referencia">
-                            <p>Será redirecionado para a gateway de pagamento seguro (Reduniq).</p>
-                            <button class="btn btn-primary">Pagar Seguro 🔒</button>
-                        </div>
-                    </div>
-
-                    <a href="servicos_pagamentos.html" style="display: inline-block; margin-top: 20px; text-decoration: underline;">← Voltar aos Pagamentos</a>
-                </div>
-
-                <div class="card-wrapper" style="height: fit-content;">
-                    <h3 style="border-bottom: 1px solid var(--cor-borda); padding-bottom: 10px;">Resumo (3)</h3>
-                    
-                    <div class="item-carrinho">
-                        <div><strong>Coima Jan. 2026</strong><br><small>Multa Atraso</small></div>
-                        <div style="font-weight: bold;">15.00€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Jan.</strong><br><small>Prestação 5</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-                    <div class="item-carrinho">
-                        <div><strong>Propina Fev.</strong><br><small>Prestação 6</small></div>
-                        <div style="font-weight: bold;">69.70€</div>
-                    </div>
-
-                    <div style="margin-top: 20px; border-top: 2px solid var(--cor-borda); padding-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
-                            <span>Total:</span>
-                            <span style="color: var(--cor-primaria);">154.40€</span>
-                        </div>
+                        <div class="barra-container"><span class="barra-valor" style="width: 80%; opacity: 0.6;"></span></div>
                     </div>
                 </div>
             </div>
+
+            <h3 style="margin-top: 30px;">Relatórios Detalhados</h3>
+            <div style="overflow-x: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Ano Letivo</th>
+                            <th>Semestre</th>
+                            <th>Documento</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024/2025</td>
+                            <td>Anual</td>
+                            <td>Relatório Síntese Pedagógica.pdf</td>
+                            <td><button class="btn btn-secondary" style="padding: 2px 8px;">Download</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023/2024</td>
+                            <td>2º Semestre</td>
+                            <td>Avaliação Docente (Global).pdf</td>
+                            <td><button class="btn btn-secondary" style="padding: 2px 8px;">Download</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023/2024</td>
+                            <td>1º Semestre</td>
+                            <td>Avaliação Docente (Global).pdf</td>
+                            <td><button class="btn btn-secondary" style="padding: 2px 8px;">Download</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </main>
     </div>
 </body>
