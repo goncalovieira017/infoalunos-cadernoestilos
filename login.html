@@ -6,7 +6,7 @@
     <title>Login - InfoAlunos</title>
     <link rel="stylesheet" href="style.css">
     <style>
-       
+        /* CSS do Login (Mantido Original) */
         body {
             display: grid;
             place-items: center;
@@ -16,7 +16,6 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        
         .login-box {
             background-color: #00509e !important; 
             padding: 3rem;
@@ -30,7 +29,6 @@
             gap: 20px;
         }
 
-        
         .logo-area { margin-bottom: 10px; }
         
         .uma-logo-text {
@@ -51,10 +49,8 @@
             color: white;
         }
 
-        
         form { display: grid; gap: 15px; }
 
-        
         .form-control {
             width: 100%;
             padding: 15px;
@@ -67,7 +63,6 @@
         }
         .form-control::placeholder { color: #888; }
 
-        
         .btn-entrar {
             background-color: transparent;
             border: 2px solid white;
@@ -82,7 +77,6 @@
         }
         .btn-entrar:hover { background-color: rgba(255, 255, 255, 0.1); }
 
-        
         .recover-link {
             color: white;
             font-size: 0.85rem;
@@ -90,13 +84,18 @@
             justify-self: end;
         }
 
-        
         .footer-uma {
             position: absolute;
             bottom: 0;
             width: 100%;
             background: #f0f2f5;
             border-top: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            font-size: 0.7rem;
+            color: gray;
         }
     </style>
 </head>
@@ -108,7 +107,7 @@
             <h1 class="site-url">infoalunos.uma.pt</h1>
         </div>
 
-        <form action="dashboard.html">
+        <form action="home.html">
             <input type="text" class="form-control" placeholder="Nº de Aluno" required>
             <input type="password" class="form-control" placeholder="Password" required>
             
@@ -118,9 +117,9 @@
     </main>
 
     <footer class="footer-uma">
-        <div class="footer-box">PORTUGAL 2030</div>
-        <div class="footer-box">MADEIRA +</div>
-        <div class="footer-box">UNIÃO EUROPEIA</div>
+        <div>PORTUGAL 2030</div>
+        <div>MADEIRA +</div>
+        <div>UNIÃO EUROPEIA</div>
     </footer>
 
 </body>

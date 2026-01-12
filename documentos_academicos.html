@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Académicos - InfoAlunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="sidebar-brand">InfoAlunos</div>
+                <label for="menu-toggle" class="btn-mobile-toggle" style="background:none; border:none; margin:0; cursor:pointer;">✕</label>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input type="text" placeholder="Pesquisar..." style="width: 100%;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="home.html" class="menu-item">Início (Dashboard)</a>
+
+                <details>
+                    <summary>Geral</summary>
+                    <div class="submenu">
+                        <a href="geral_processos.html">Processos</a>
+                        <a href="geral_dados.html">Dados Pessoais</a>
+                        <a href="geral_privacidade.html">Privacidade</a>
+                        <a href="geral_ajuda.html">Ajuda</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Serviços</summary>
+                    <div class="submenu">
+                        <a href="servicos_pagamentos.html">Pagamentos</a>
+                        <a href="carrinho.html">Carrinho</a>
+                        <a href="servicos_matriculas.html">Matrículas Inscrições</a>
+                        <a href="servicos_turmas.html">Inscrição em Turmas</a>
+                        <a href="servicos_requerimentos.html">Requerimentos</a>
+                        <a href="servicos_cartao.html">Cartão Universitário</a>
+                        <a href="servicos_bolsas.html">SASUMa-Bolsas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Concursos</summary>
+                    <div class="submenu">
+                        <a href="concursos_candidaturas.html">Candidaturas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Avaliação</summary>
+                    <div class="submenu">
+                        <a href="avaliacao_pautas.html">Pautas</a>
+                        <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
+                        <a href="avaliacao_inqueritos.html">Inquéritos</a>
+                        <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
+                        <a href="avaliacao_raides.html">Inquérito RAIDES</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Creditações</summary>
+                    <div class="submenu">
+                        <a href="creditacoes_lista.html">Lista Processos</a>
+                        <a href="creditacoes_novo.html">Novo Processo</a>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Documentos</summary>
+                    <div class="submenu">
+                        <a href="documentos_academicos.html" class="active" style="color:white; font-weight:bold;">Académicos</a>
+                        <a href="documentos_declaracoes.html">Declarações</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aulas</summary>
+                    <div class="submenu">
+                        <a href="aulas_calendario.html">Calendário</a>
+                        <a href="aulas_sumarios.html">Sumários</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Disciplina</summary>
+                    <div class="submenu">
+                        <a href="disciplina_ficha.html">Ficha</a>
+                        <a href="disciplina_programa.html">Programa</a>
+                        <a href="disciplina_ficheiros.html">Ficheiros</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Curso</summary>
+                    <div class="submenu">
+                        <a href="curso_ficha.html">Ficha Curricular</a>
+                        <a href="curso_horarios.html">Horários</a>
+                        <a href="curso_historico.html">Histórico de Matrículas</a>
+                        <a href="curso_aprovadas.html">Disciplinas Aprovadas</a>
+                        <a href="curso_transicao.html">Transição para Bolonha</a>
+                        <a href="curso_conclusao.html">Plano de Conclusão</a>
+                        <a href="curso_prescricao.html">Quadro de Prescrição</a>
+                        <a href="curso_atividades.html">Atividades Académicas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Instituição</summary>
+                    <div class="submenu">
+                        <a href="instituicao_estrutura.html">Estrutura Orgânica</a>
+                    </div>
+                </details>
+                
+                <a href="eleicoes.html" class="menu-item">Eleições</a>
+                <a href="login.html" class="menu-item" style="margin-top: auto; color: #ffadad;">Sair</a>
+            </nav>
+
+            <div style="margin-top: auto; font-size: 0.7rem; opacity: 0.5; text-align: center;">
+                Portugal 2030 . Madeira
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div>
+                    <h1>Documentos Académicos</h1>
+                    <p>Certidões e diplomas emitidos digitalmente.</p>
+                </div>
+                <a href="servicos_requerimentos.html" class="btn btn-primary">Pedir Novo Documento</a>
+            </div>
+
+            <div style="overflow-x: auto; margin-top: 20px;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Data Emissão</th>
+                            <th>Validade (Código Verificação)</th>
+                            <th>Estado</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Certidão de Matrícula</strong><br>
+                                <small>Ano Letivo 2025/2026</small>
+                            </td>
+                            <td>01/09/2025</td>
+                            <td>31/08/2026</td>
+                            <td><span class="badge" style="background: var(--cor-sucesso); position: static; translate: 0;">Válido</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 2px 8px;">📥 Download PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Certidão de Aproveitamento</strong><br>
+                                <small>1º Ano Curricular</small>
+                            </td>
+                            <td>15/07/2025</td>
+                            <td>Permanente</td>
+                            <td><span class="badge" style="background: var(--cor-sucesso); position: static; translate: 0;">Válido</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 2px 8px;">📥 Download PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Certidão de Matrícula</strong><br>
+                                <small>Ano Letivo 2024/2025</small>
+                            </td>
+                            <td>01/09/2024</td>
+                            <td>31/08/2025</td>
+                            <td><span class="badge" style="background: var(--cor-secundaria); position: static; translate: 0;">Expirado</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 2px 8px;" disabled>Arquivo</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-info" style="margin-top: 20px;">
+                <span>ℹ️ Os documentos digitais possuem assinatura qualificada e têm o mesmo valor legal que o papel.</span>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiros - InfoAlunos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo simples para lista de ficheiros */
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid var(--cor-borda);
+            transition: background 0.2s;
+        }
+        .file-item:last-child { border-bottom: none; }
+        .file-item:hover { background: rgba(0,0,0,0.02); }
+        
+        .file-info { display: flex; align-items: center; gap: 10px; }
+        .file-icon { font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="sidebar-brand">InfoAlunos</div>
+                <label for="menu-toggle" class="btn-mobile-toggle" style="background:none; border:none; margin:0; cursor:pointer;">✕</label>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input type="text" placeholder="Pesquisar..." style="width: 100%;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="home.html" class="menu-item">Início (Dashboard)</a>
+
+                <details>
+                    <summary>Geral</summary>
+                    <div class="submenu">
+                        <a href="geral_processos.html">Processos</a>
+                        <a href="geral_dados.html">Dados Pessoais</a>
+                        <a href="geral_privacidade.html">Privacidade</a>
+                        <a href="geral_ajuda.html">Ajuda</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Serviços</summary>
+                    <div class="submenu">
+                        <a href="servicos_pagamentos.html">Pagamentos</a>
+                        <a href="carrinho.html">Carrinho</a>
+                        <a href="servicos_matriculas.html">Matrículas Inscrições</a>
+                        <a href="servicos_turmas.html">Inscrição em Turmas</a>
+                        <a href="servicos_requerimentos.html">Requerimentos</a>
+                        <a href="servicos_cartao.html">Cartão Universitário</a>
+                        <a href="servicos_bolsas.html">SASUMa-Bolsas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Concursos</summary>
+                    <div class="submenu">
+                        <a href="concursos_candidaturas.html">Candidaturas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Avaliação</summary>
+                    <div class="submenu">
+                        <a href="avaliacao_pautas.html">Pautas</a>
+                        <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
+                        <a href="avaliacao_inqueritos.html">Inquéritos</a>
+                        <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
+                        <a href="avaliacao_raides.html">Inquérito RAIDES</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Creditações</summary>
+                    <div class="submenu">
+                        <a href="creditacoes_lista.html">Lista Processos</a>
+                        <a href="creditacoes_novo.html">Novo Processo</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Documentos</summary>
+                    <div class="submenu">
+                        <a href="documentos_academicos.html">Académicos</a>
+                        <a href="documentos_declaracoes.html">Declarações</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aulas</summary>
+                    <div class="submenu">
+                        <a href="aulas_calendario.html">Calendário</a>
+                        <a href="aulas_sumarios.html">Sumários</a>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Disciplina</summary>
+                    <div class="submenu">
+                        <a href="disciplina_ficha.html">Ficha</a>
+                        <a href="disciplina_programa.html">Programa</a>
+                        <a href="disciplina_ficheiros.html" class="active" style="color:white; font-weight:bold;">Ficheiros</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Curso</summary>
+                    <div class="submenu">
+                        <a href="curso_ficha.html">Ficha Curricular</a>
+                        <a href="curso_horarios.html">Horários</a>
+                        <a href="curso_historico.html">Histórico de Matrículas</a>
+                        <a href="curso_aprovadas.html">Disciplinas Aprovadas</a>
+                        <a href="curso_transicao.html">Transição para Bolonha</a>
+                        <a href="curso_conclusao.html">Plano de Conclusão</a>
+                        <a href="curso_prescricao.html">Quadro de Prescrição</a>
+                        <a href="curso_atividades.html">Atividades Académicas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Instituição</summary>
+                    <div class="submenu">
+                        <a href="instituicao_estrutura.html">Estrutura Orgânica</a>
+                    </div>
+                </details>
+                
+                <a href="eleicoes.html" class="menu-item">Eleições</a>
+                <a href="login.html" class="menu-item" style="margin-top: auto; color: #ffadad;">Sair</a>
+            </nav>
+
+            <div style="margin-top: auto; font-size: 0.7rem; opacity: 0.5; text-align: center;">
+                Portugal 2030 . Madeira
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <h1>Material de Apoio</h1>
+                <select style="padding: 10px; min-width: 250px;">
+                    <option>Bases de Dados</option>
+                    <option>Programação II</option>
+                    <option>Design Hipermédia</option>
+                </select>
+            </div>
+
+            <p>Faça o download dos diapositivos, enunciados e resoluções.</p>
+
+            <div style="margin-top: 20px; display: grid; gap: 15px;">
+                
+                <details open>
+                    <summary style="background: #e9ecef; color: #333; padding: 15px; border-radius: 4px; cursor: pointer; border: 1px solid var(--cor-borda);">
+                        <strong>📂 Aulas Teóricas (Slides)</strong>
+                    </summary>
+                    <div class="card-wrapper" style="border-top-left-radius: 0; border-top-right-radius: 0; border-top: 0; box-shadow: none; border: 1px solid var(--cor-borda);">
+                        <ul class="file-list">
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">📕</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Capítulo 01 - Introdução</div>
+                                        <small style="color: gray;">PDF • 2.4 MB • 15/09/2025</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">📕</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Capítulo 02 - Modelo ER</div>
+                                        <small style="color: gray;">PDF • 3.1 MB • 22/09/2025</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">📕</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Capítulo 03 - Modelo Relacional</div>
+                                        <small style="color: gray;">PDF • 2.8 MB • 29/09/2025</small>
+                                        <span class="badge" style="background: var(--cor-sucesso); color: white; margin-left: 5px; font-size: 0.6rem;">NOVO</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary style="background: #e9ecef; color: #333; padding: 15px; border-radius: 4px; cursor: pointer; border: 1px solid var(--cor-borda);">
+                        <strong>📂 Fichas Práticas</strong>
+                    </summary>
+                    <div class="card-wrapper" style="border-top-left-radius: 0; border-top-right-radius: 0; border-top: 0; box-shadow: none; border: 1px solid var(--cor-borda);">
+                        <ul class="file-list">
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">📄</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Ficha 01 - Modelação</div>
+                                        <small style="color: gray;">PDF • 150 KB</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">📄</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Ficha 02 - SQL Básico</div>
+                                        <small style="color: gray;">PDF • 180 KB</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary style="background: #e9ecef; color: #333; padding: 15px; border-radius: 4px; cursor: pointer; border: 1px solid var(--cor-borda);">
+                        <strong>📂 Projeto Semestral</strong>
+                    </summary>
+                    <div class="card-wrapper" style="border-top-left-radius: 0; border-top-right-radius: 0; border-top: 0; box-shadow: none; border: 1px solid var(--cor-borda);">
+                        <ul class="file-list">
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">📜</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Enunciado do Projeto</div>
+                                        <small style="color: gray;">PDF • 500 KB</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <span class="file-icon">🗂️</span>
+                                    <div>
+                                        <div style="font-weight: bold;">Dataset de Exemplo</div>
+                                        <small style="color: gray;">ZIP (CSV) • 5.0 MB</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" style="padding: 2px 8px;">Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

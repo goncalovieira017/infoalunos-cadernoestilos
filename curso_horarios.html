@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário - InfoAlunos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS DO HORÁRIO (GRID) --- */
+        
+        /* Cabeçalho de Controlo (Hoje, Setas, Data) */
+        .schedule-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-pill {
+            border: 1px solid var(--cor-primaria);
+            background: white;
+            color: var(--cor-primaria);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-pill.active {
+            background: var(--cor-primaria);
+            color: white;
+        }
+
+        .date-display {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* GRELHA DO HORÁRIO */
+        .schedule-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+            overflow-x: auto; /* Scroll lateral em telemóveis */
+        }
+
+        .schedule-grid {
+            display: grid;
+            /* Coluna da hora (60px) + 5 dias iguais */
+            grid-template-columns: 60px repeat(5, minmax(140px, 1fr));
+            /* Linhas de 30 minutos. Começa 07:30 (row 2) até 21:30 */
+            grid-template-rows: 40px repeat(29, 30px); 
+            gap: 1px;
+            background-color: #f0f0f0; /* Cor das linhas da grelha */
+            border: 1px solid #e0e0e0;
+            min-width: 800px; /* Garante largura mínima */
+        }
+
+        /* Células brancas de fundo */
+        .grid-cell {
+            background-color: white;
+        }
+
+        /* Cabeçalhos (Dias) */
+        .header-day {
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-day span { font-size: 1.2rem; color: var(--cor-primaria); display: block; }
+        .header-day small { font-size: 0.7rem; color: gray; text-transform: uppercase; }
+
+        /* Coluna das Horas */
+        .time-label {
+            background-color: white;
+            color: #666;
+            font-size: 0.75rem;
+            text-align: center;
+            position: relative;
+            top: -10px; /* Ajuste visual para alinhar com a linha */
+        }
+
+        /* BLOCOS DE AULAS (EVENTS) */
+        .event {
+            padding: 5px;
+            color: white;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            z-index: 10;
+        }
+        
+        .event strong { display: block; margin-bottom: 2px; font-size: 0.8rem; line-height: 1.1; }
+        .event span { opacity: 0.9; }
+
+        /* Cores das Aulas */
+        .bg-red { background-color: #e57373; }       /* Intro Programação */
+        .bg-blue { background-color: #64b5f6; }      /* Sistemas Operativos */
+        .bg-purple { background-color: #9575cd; }    /* Técnicas Expressão */
+        .bg-teal { background-color: #4db6ac; }      /* Design Hipermédia */
+        .bg-orange { background-color: #ffb74d; }    /* Matemática */
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="sidebar-brand">InfoAlunos</div>
+                <label for="menu-toggle" class="btn-mobile-toggle" style="background:none; border:none; margin:0; cursor:pointer;">✕</label>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input type="text" placeholder="Pesquisar..." style="width: 100%;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="home.html" class="menu-item">Início (Dashboard)</a>
+
+                <details>
+                    <summary>Geral</summary>
+                    <div class="submenu">
+                        <a href="geral_processos.html">Processos</a>
+                        <a href="geral_dados.html">Dados Pessoais</a>
+                        <a href="geral_privacidade.html">Privacidade</a>
+                        <a href="geral_ajuda.html">Ajuda</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Serviços</summary>
+                    <div class="submenu">
+                        <a href="servicos_pagamentos.html">Pagamentos</a>
+                        <a href="carrinho.html">Carrinho</a>
+                        <a href="servicos_matriculas.html">Matrículas Inscrições</a>
+                        <a href="servicos_turmas.html">Inscrição em Turmas</a>
+                        <a href="servicos_requerimentos.html">Requerimentos</a>
+                        <a href="servicos_cartao.html">Cartão Universitário</a>
+                        <a href="servicos_bolsas.html">SASUMa-Bolsas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Concursos</summary>
+                    <div class="submenu">
+                        <a href="concursos_candidaturas.html">Candidaturas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Avaliação</summary>
+                    <div class="submenu">
+                        <a href="avaliacao_pautas.html">Pautas</a>
+                        <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
+                        <a href="avaliacao_inqueritos.html">Inquéritos</a>
+                        <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
+                        <a href="avaliacao_raides.html">Inquérito RAIDES</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Creditações</summary>
+                    <div class="submenu">
+                        <a href="creditacoes_lista.html">Lista Processos</a>
+                        <a href="creditacoes_novo.html">Novo Processo</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Documentos</summary>
+                    <div class="submenu">
+                        <a href="documentos_academicos.html">Académicos</a>
+                        <a href="documentos_declaracoes.html">Declarações</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aulas</summary>
+                    <div class="submenu">
+                        <a href="aulas_calendario.html">Calendário</a>
+                        <a href="aulas_sumarios.html">Sumários</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Disciplina</summary>
+                    <div class="submenu">
+                        <a href="disciplina_ficha.html">Ficha</a>
+                        <a href="disciplina_programa.html">Programa</a>
+                        <a href="disciplina_ficheiros.html">Ficheiros</a>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Curso</summary>
+                    <div class="submenu">
+                        <a href="curso_ficha.html">Ficha Curricular</a>
+                        <a href="curso_horarios.html" class="active" style="color:white; font-weight:bold;">Horários</a>
+                        <a href="curso_historico.html">Histórico de Matrículas</a>
+                        <a href="curso_aprovadas.html">Disciplinas Aprovadas</a>
+                        <a href="curso_transicao.html">Transição para Bolonha</a>
+                        <a href="curso_conclusao.html">Plano de Conclusão</a>
+                        <a href="curso_prescricao.html">Quadro de Prescrição</a>
+                        <a href="curso_atividades.html">Atividades Académicas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Instituição</summary>
+                    <div class="submenu">
+                        <a href="instituicao_estrutura.html">Estrutura Orgânica</a>
+                    </div>
+                </details>
+                
+                <a href="eleicoes.html" class="menu-item">Eleições</a>
+                <a href="login.html" class="menu-item" style="margin-top: auto; color: #ffadad;">Sair</a>
+            </nav>
+
+            <div style="margin-top: auto; font-size: 0.7rem; opacity: 0.5; text-align: center;">
+                Portugal 2030 . Madeira
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <div class="schedule-controls">
+                <a href="#" class="btn-pill">Hoje</a>
+                <div style="display: flex; gap: 5px;">
+                    <a href="#" class="btn-pill">‹</a>
+                    <a href="#" class="btn-pill">›</a>
+                </div>
+                <span class="date-display">12 jan. - 18 jan. 2026</span>
+                <div style="margin-left: auto;">
+                    <span style="font-size: 1.2rem; cursor: pointer;">🖨️</span>
+                    <span style="font-size: 1.2rem; cursor: pointer; margin-left: 10px;">📅</span>
+                </div>
+            </div>
+
+            <div class="schedule-container">
+                <div class="schedule-grid">
+                    
+                    <div class="grid-cell"></div> <div class="header-day"><span>12</span><small>Segunda-Feira</small></div>
+                    <div class="header-day"><span>13</span><small>Terça-Feira</small></div>
+                    <div class="header-day"><span>14</span><small>Quarta-Feira</small></div>
+                    <div class="header-day"><span>15</span><small>Quinta-Feira</small></div>
+                    <div class="header-day"><span>16</span><small>Sexta-Feira</small></div>
+
+                    <div class="time-label" style="grid-row: 2;">07:30</div>
+                    <div class="time-label" style="grid-row: 3;">08:00</div>
+                    <div class="time-label" style="grid-row: 4;">08:30</div>
+                    <div class="time-label" style="grid-row: 5;">09:00</div>
+                    <div class="time-label" style="grid-row: 6;">09:30</div>
+                    <div class="time-label" style="grid-row: 7;">10:00</div>
+                    <div class="time-label" style="grid-row: 8;">10:30</div>
+                    <div class="time-label" style="grid-row: 9;">11:00</div>
+                    <div class="time-label" style="grid-row: 10;">11:30</div>
+                    <div class="time-label" style="grid-row: 11;">12:00</div>
+                    <div class="time-label" style="grid-row: 12;">12:30</div>
+                    <div class="time-label" style="grid-row: 13;">13:00</div>
+                    <div class="time-label" style="grid-row: 14;">13:30</div>
+                    <div class="time-label" style="grid-row: 15;">14:00</div>
+                    <div class="time-label" style="grid-row: 16;">14:30</div>
+                    <div class="time-label" style="grid-row: 17;">15:00</div>
+                    <div class="time-label" style="grid-row: 18;">15:30</div>
+                    <div class="time-label" style="grid-row: 19;">16:00</div>
+                    <div class="time-label" style="grid-row: 20;">16:30</div>
+                    <div class="time-label" style="grid-row: 21;">17:00</div>
+                    <div class="time-label" style="grid-row: 22;">17:30</div>
+                    <div class="time-label" style="grid-row: 23;">18:00</div>
+                    <div class="time-label" style="grid-row: 24;">18:30</div>
+                    <div class="time-label" style="grid-row: 25;">19:00</div>
+                    <div class="time-label" style="grid-row: 26;">19:30</div>
+                    <div class="time-label" style="grid-row: 27;">20:00</div>
+                    <div class="time-label" style="grid-row: 28;">20:30</div>
+                    <div class="time-label" style="grid-row: 29;">21:00</div>
+                    <div class="time-label" style="grid-row: 30;">21:30</div>
+
+                    <div class="grid-cell" style="grid-area: 2 / 2 / 31 / 7; z-index: 1;"></div>
+
+                    <div class="event bg-purple" style="grid-column: 4; grid-row: 9 / 13;">
+                        <span>11:00-13:00</span>
+                        <strong>Técnicas de Expressão do Português</strong>
+                        <span>[TP] Sala 14</span>
+                    </div>
+
+                    <div class="event bg-blue" style="grid-column: 4; grid-row: 15 / 19;">
+                        <span>14:00-16:00</span>
+                        <strong>Sistemas Operativos e Redes</strong>
+                        <span>[H] Lab 2</span>
+                    </div>
+
+                    <div class="event bg-teal" style="grid-column: 4; grid-row: 19 / 23;">
+                        <span>16:00-18:00</span>
+                        <strong>Design Hipermédia</strong>
+                        <span>[TP] Sala 29</span>
+                    </div>
+
+                    <div class="event bg-blue" style="grid-column: 5; grid-row: 5 / 9;">
+                        <span>09:00-11:00</span>
+                        <strong>Sistemas Operativos</strong>
+                        <span>[H] Ed. Castanheiro</span>
+                    </div>
+
+                    <div class="event bg-teal" style="grid-column: 5; grid-row: 15 / 19;">
+                        <span>14:00-16:00</span>
+                        <strong>Design Hipermédia</strong>
+                        <span>[Frequência] Centro Sim.</span>
+                    </div>
+
+                    <div class="event bg-orange" style="grid-column: 5; grid-row: 19 / 23;">
+                        <span>16:00-18:00</span>
+                        <strong>Matemática</strong>
+                        <span>[TP] Sala 16</span>
+                    </div>
+
+                    <div class="event bg-purple" style="grid-column: 5; grid-row: 23 / 27;">
+                        <span>18:00-20:00</span>
+                        <strong>Técnicas Expressão</strong>
+                        <span>[TP] Ed. Castanheiro</span>
+                    </div>
+
+                    <div class="event bg-red" style="grid-column: 6; grid-row: 3 / 11;">
+                        <span>08:00-12:00</span>
+                        <strong>Introdução à Programação</strong>
+                        <span>[H] Sala 31</span>
+                    </div>
+
+                    <div class="event bg-purple" style="grid-column: 6; grid-row: 15 / 23;">
+                        <span>14:00-18:00</span>
+                        <strong>Técnicas Expressão</strong>
+                        <span>[TP] Sala 14</span>
+                    </div>
+
+                    <div class="event bg-teal" style="grid-column: 2; grid-row: 22 / 26;">
+                        <span>17:30-19:30</span>
+                        <strong>Design Hipermédia</strong>
+                        <span>[H] Sala 29</span>
+                    </div>
+
+                    <div class="event bg-teal" style="grid-column: 2; grid-row: 27 / 30;">
+                        <span>20:00-21:30</span>
+                        <strong>Design Hipermédia</strong>
+                        <span>[H] Sala 29</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; font-size: 0.7rem; color: #666; border-top: 1px solid #ddd; padding-top: 10px;">
+                © Universidade da Madeira - Gabinete de Desenvolvimento de Aplicações Informáticas - Proteção de Dados e Termos de Utilização<br>
+                Processado em: 0.05 segundos - powered by hydro framework
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

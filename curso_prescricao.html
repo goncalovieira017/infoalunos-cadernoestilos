@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescrições - InfoAlunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="sidebar-brand">InfoAlunos</div>
+                <label for="menu-toggle" class="btn-mobile-toggle" style="background:none; border:none; margin:0; cursor:pointer;">✕</label>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input type="text" placeholder="Pesquisar..." style="width: 100%;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="home.html" class="menu-item">Início (Dashboard)</a>
+
+                <details>
+                    <summary>Geral</summary>
+                    <div class="submenu">
+                        <a href="geral_processos.html">Processos</a>
+                        <a href="geral_dados.html">Dados Pessoais</a>
+                        <a href="geral_privacidade.html">Privacidade</a>
+                        <a href="geral_ajuda.html">Ajuda</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Serviços</summary>
+                    <div class="submenu">
+                        <a href="servicos_pagamentos.html">Pagamentos</a>
+                        <a href="carrinho.html">Carrinho</a>
+                        <a href="servicos_matriculas.html">Matrículas Inscrições</a>
+                        <a href="servicos_turmas.html">Inscrição em Turmas</a>
+                        <a href="servicos_requerimentos.html">Requerimentos</a>
+                        <a href="servicos_cartao.html">Cartão Universitário</a>
+                        <a href="servicos_bolsas.html">SASUMa-Bolsas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Concursos</summary>
+                    <div class="submenu">
+                        <a href="concursos_candidaturas.html">Candidaturas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Avaliação</summary>
+                    <div class="submenu">
+                        <a href="avaliacao_pautas.html">Pautas</a>
+                        <a href="avaliacao_reclamacao.html">Reclamação de Notas</a>
+                        <a href="avaliacao_inqueritos.html">Inquéritos</a>
+                        <a href="avaliacao_resultados.html">Resultado Inquéritos</a>
+                        <a href="avaliacao_raides.html">Inquérito RAIDES</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Creditações</summary>
+                    <div class="submenu">
+                        <a href="creditacoes_lista.html">Lista Processos</a>
+                        <a href="creditacoes_novo.html">Novo Processo</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Documentos</summary>
+                    <div class="submenu">
+                        <a href="documentos_academicos.html">Académicos</a>
+                        <a href="documentos_declaracoes.html">Declarações</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aulas</summary>
+                    <div class="submenu">
+                        <a href="aulas_calendario.html">Calendário</a>
+                        <a href="aulas_sumarios.html">Sumários</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Disciplina</summary>
+                    <div class="submenu">
+                        <a href="disciplina_ficha.html">Ficha</a>
+                        <a href="disciplina_programa.html">Programa</a>
+                        <a href="disciplina_ficheiros.html">Ficheiros</a>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Curso</summary>
+                    <div class="submenu">
+                        <a href="curso_ficha.html">Ficha Curricular</a>
+                        <a href="curso_horarios.html">Horários</a>
+                        <a href="curso_historico.html">Histórico de Matrículas</a>
+                        <a href="curso_aprovadas.html">Disciplinas Aprovadas</a>
+                        <a href="curso_transicao.html">Transição para Bolonha</a>
+                        <a href="curso_conclusao.html">Plano de Conclusão</a>
+                        <a href="curso_prescricao.html" class="active" style="color:white; font-weight:bold;">Quadro de Prescrição</a>
+                        <a href="curso_atividades.html">Atividades Académicas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Instituição</summary>
+                    <div class="submenu">
+                        <a href="instituicao_estrutura.html">Estrutura Orgânica</a>
+                    </div>
+                </details>
+                
+                <a href="eleicoes.html" class="menu-item">Eleições</a>
+                <a href="login.html" class="menu-item" style="margin-top: auto; color: #ffadad;">Sair</a>
+            </nav>
+
+            <div style="margin-top: auto; font-size: 0.7rem; opacity: 0.5; text-align: center;">
+                Portugal 2030 . Madeira
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <label for="menu-toggle" class="btn-mobile-toggle">☰ Menu</label>
+            
+            <h1>Quadro de Prescrição</h1>
+            <p>Monitorização do regime de prescrições (perda do direito à matrícula).</p>
+
+            <div class="alert alert-sucesso" style="margin-top: 20px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 20px; border-radius: 4px; display: flex; align-items: center; gap: 15px;">
+                <span style="font-size: 2rem;">🛡️</span>
+                <div>
+                    <strong style="font-size: 1.1rem;">Situação Regular</strong>
+                    <p style="margin: 5px 0 0 0;">Não existe risco de prescrição no presente ano letivo. O aluno cumpre os requisitos mínimos de aproveitamento.</p>
+                </div>
+            </div>
+
+            <div class="card-wrapper" style="margin-top: 20px;">
+                <h3>Histórico de Aproveitamento</h3>
+                <p style="color: gray; margin-bottom: 15px;">Registo para efeitos de contagem de prescrição.</p>
+
+                <div style="overflow-x: auto;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nº Matrículas</th>
+                                <th>Regime</th>
+                                <th>ECTS Acumulados</th>
+                                <th>Mínimo Exigido</th>
+                                <th>Cumpriu?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1ª Inscrição</td>
+                                <td>Tempo Integral</td>
+                                <td>30 ECTS</td>
+                                <td>0 ECTS</td>
+                                <td><span class="badge" style="background: var(--cor-sucesso); position: static; translate: 0;">Sim</span></td>
+                            </tr>
+                            <tr>
+                                <td>2ª Inscrição</td>
+                                <td>Tempo Integral</td>
+                                <td>60 ECTS</td>
+                                <td>20 ECTS</td>
+                                <td><span class="badge" style="background: var(--cor-sucesso); position: static; translate: 0;">Sim</span></td>
+                            </tr>
+                            <tr style="background: rgba(0,0,0,0.02); font-weight: bold;">
+                                <td>3ª Inscrição (Atual)</td>
+                                <td>Tempo Integral</td>
+                                <td>Em curso...</td>
+                                <td>40 ECTS</td>
+                                <td><span class="badge" style="background: var(--cor-secundaria); position: static; translate: 0;">A decorrer</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-wrapper" style="margin-top: 20px; border-left: 4px solid var(--cor-primaria);">
+                <h3>Regras Gerais</h3>
+                <p>De acordo com o regulamento académico, prescreve o aluno que:</p>
+                <ul style="padding-left: 20px; line-height: 1.6; color: #555;">
+                    <li>Com 3 matrículas, não tenha obtido aprovação a pelo menos 40 créditos;</li>
+                    <li>Com 4 matrículas, não tenha obtido aprovação a pelo menos 50 créditos;</li>
+                    <li>Com 5 matrículas, não tenha obtido aprovação a pelo menos 60 créditos.</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.9rem;">
+                    <em>Nota: Os trabalhadores-estudantes e estudantes a tempo parcial têm regimes específicos de contagem.</em>
+                </p>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
